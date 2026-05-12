@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0c0c10">
+<meta name="description" content="Catálogo completo de dispositivos UEFN — Unreal Editor for Fortnite. Referencia visual con descripción, ejemplo de uso y propiedades de cada device. 172 dispositivos, 14 categorías.">
+<meta name="keywords" content="UEFN, Unreal Editor Fortnite, dispositivos UEFN, Fortnite Creative, Creative 2.0, Verse, devices, referencia">
+<meta name="author" content="UEFN Devices">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UEFN Devices — Referencia Completa de Dispositivos">
+<meta property="og:description" content="172 dispositivos de Unreal Editor for Fortnite con descripción completa, ejemplos de uso y propiedades. La referencia más completa en español.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UEFN Devices — Referencia Completa">
+<meta name="twitter:description" content="172 dispositivos UEFN con descripción, ejemplos y propiedades. Referencia en español para creadores de mapas.">
+<meta name="twitter:image" content="og-image.png">
+<title>UEFN Devices — Referencia Completa de Dispositivos</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23f7b731'/><text x='16' y='23' text-anchor='middle' font-size='20' font-family='Arial' font-weight='900'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #0c0c10;
+  --bg2:      #131318;
+  --bg3:      #1a1a22;
+  --bg4:      #22222c;
+  --border:   #2c2c3a;
+  --border2:  #3c3c50;
+  --text:     #eeeef8;
+  --textdim:  #8888aa;
+  --textdimmer:#4a4a62;
+  --accent:   #f7b731;
+  --accent2:  #ffd166;
+  --accentbg: rgba(247,183,49,0.10);
+  --accentbg2:rgba(247,183,49,0.18);
+  --blue:     #4fc3f7;
+  --bluebg:   rgba(79,195,247,0.10);
+  --purple:   #b48ef7;
+  --purplebg: rgba(180,142,247,0.10);
+  --green:    #4ef0a0;
+  --greenbg:  rgba(78,240,160,0.10);
+  --red:      #ff6b6b;
+  --redbg:    rgba(255,107,107,0.10);
+  --orange:   #ff9f43;
+  --orangebg: rgba(255,159,67,0.10);
+  --pink:     #f368e0;
+  --pinkbg:   rgba(243,104,224,0.10);
+  --teal:     #1dd1a1;
+  --tealbg:   rgba(29,209,161,0.10);
+  --r: 10px;
+  --r2: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* ─── HEADER ─────────────────────────────────────────────── */
+header {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(12,12,16,0.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 20px;
+}
+.header-inner {
+  max-width: 1440px; margin: 0 auto;
+  height: 62px; display: flex; align-items: center; gap: 16px;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; flex-shrink: 0;
+}
+.logo-badge {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), #e67e22);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 900; color: #000;
+  box-shadow: 0 0 16px rgba(247,183,49,0.35);
+}
+.logo-title { font-size: 17px; font-weight: 900; color: var(--text); letter-spacing: -0.02em; }
+.logo-sub { font-size: 10px; color: var(--textdim); font-family: 'Space Mono', monospace; }
+
+.search-wrap { flex: 1; max-width: 440px; position: relative; }
+.search-wrap::before {
+  content: '🔍'; position: absolute; left: 12px; top: 50%;
+  transform: translateY(-50%); font-size: 14px; pointer-events: none;
+}
+#search {
+  width: 100%; height: 38px; background: var(--bg3);
+  border: 1.5px solid var(--border); border-radius: var(--r);
+  color: var(--text); font-family: 'Nunito', sans-serif;
+  font-size: 14px; font-weight: 600; padding: 0 36px 0 36px; outline: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+#search:focus { border-color: var(--accent); background: var(--bg4); }
+#search::placeholder { color: var(--textdimmer); }
+.clear-x {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: var(--textdim); cursor: pointer;
+  font-size: 15px; display: none; padding: 2px 4px; line-height: 1;
+}
+.clear-x.show { display: block; }
+.header-total {
+  font-family: 'Space Mono', monospace; font-size: 11px;
+  color: var(--textdim); white-space: nowrap; flex-shrink: 0;
+}
+.header-total b { color: var(--accent); }
+
+.header-donate {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.donate-btn {
+  height: 38px;
+  padding: 0 14px;
+  border-radius: var(--r);
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--textdim);
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.donate-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accentbg);
+}
+.donate-btn.paypal { color: #0070ba; border-color: #0070ba; }
+.donate-btn.paypal:hover { background: rgba(0, 112, 186, 0.1); }
+.donate-btn.patreon { color: #f96854; border-color: #f96854; }
+.donate-btn.patreon:hover { background: rgba(249, 104, 84, 0.1); }
+
+/* ─── MODAL UEFN TOOL ─────────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  width: 90%;
+  height: 90%;
+  max-width: 1200px;
+  background: var(--bg2);
+  border-radius: var(--r2);
+  border: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--text);
+}
+.modal-close {
+  background: none;
+  border: none;
+  color: var(--textdim);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+}
+.modal-close:hover {
+  color: var(--text);
+}
+.modal-iframe {
+  flex: 1;
+  border: none;
+  width: 100%;
+}
+
+/* ─── FILTER BAR ─────────────────────────────────────────── */
+.filter-bar {
+  background: var(--bg2); border-bottom: 1px solid var(--border);
+  padding: 0 20px; overflow-x: auto; scrollbar-width: none; position: sticky; top: 62px; z-index: 100;
+}
+.filter-bar::-webkit-scrollbar { display: none; }
+.filter-inner { max-width: 1440px; margin: 0 auto; display: flex; gap: 6px; padding: 9px 0; }
+.chip {
+  height: 28px; padding: 0 13px; border-radius: 14px;
+  border: 1.5px solid var(--border); background: transparent;
+  color: var(--textdim); font-family: 'Nunito', sans-serif;
+  font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap;
+  transition: all 0.15s; flex-shrink: 0; display: flex; align-items: center; gap: 5px;
+}
+.chip:hover { border-color: var(--border2); color: var(--text); }
+.chip.on { background: var(--accentbg2); border-color: var(--accent); color: var(--accent); }
+.chip-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+/* ─── MAIN ───────────────────────────────────────────────── */
+main { max-width: 1440px; margin: 0 auto; padding: 24px 20px; }
+
+/* ─── CATEGORY SECTION ───────────────────────────────────── */
+.cat-section { margin-bottom: 44px; }
+.cat-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+}
+.cat-icon-wrap {
+  width: 42px; height: 42px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.cat-icon-wrap svg { width: 24px; height: 24px; }
+.cat-name { font-size: 20px; font-weight: 900; letter-spacing: -0.01em; }
+.cat-count {
+  font-family: 'Space Mono', monospace; font-size: 11px;
+  color: var(--textdim); margin-left: auto;
+}
+.cat-divider { height: 1px; background: var(--border); margin-bottom: 16px; }
+
+/* ─── DEVICE GRID ─────────────────────────────────────────── */
+.device-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+/* ─── DEVICE CARD ─────────────────────────────────────────── */
+.card {
+  background: var(--bg2); border: 1.5px solid var(--border);
+  border-radius: var(--r2); padding: 0; overflow: hidden;
+  cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  display: flex; flex-direction: column;
+}
+.card:hover { border-color: var(--border2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.4); }
+.card.open { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset, 0 8px 32px rgba(247,183,49,0.12); }
+
+/* card top color strip */
+.card-strip { height: 3px; width: 100%; }
+
+.card-body { padding: 16px 16px 14px; }
+
+.card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.card-device-icon {
+  width: 46px; height: 46px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--border);
+}
+.card-device-icon svg { width: 28px; height: 28px; }
+.card-info { flex: 1; min-width: 0; }
+.card-name { font-size: 15px; font-weight: 900; line-height: 1.2; margin-bottom: 3px; }
+.card-cat-tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: 'Space Mono', monospace; font-size: 9px;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 2px 7px; border-radius: 4px; font-weight: 700;
+}
+.card-desc { font-size: 13px; color: var(--textdim); line-height: 1.55; margin-bottom: 12px; font-weight: 600; }
+
+.card-footer-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 16px; background: var(--bg3); border-top: 1px solid var(--border);
+}
+.btn-more {
+  background: none; border: 1.5px solid var(--border); border-radius: 7px;
+  color: var(--textdim); font-family: 'Nunito', sans-serif;
+  font-size: 12px; font-weight: 700; padding: 5px 13px; cursor: pointer;
+  transition: all 0.15s; white-space: nowrap;
+}
+.btn-more:hover, .card.open .btn-more { border-color: var(--accent); color: var(--accent); background: var(--accentbg); }
+
+.card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag {
+  font-family: 'Space Mono', monospace; font-size: 10px;
+  background: var(--bg4); border: 1px solid var(--border);
+  border-radius: 4px; padding: 2px 7px; color: var(--textdim);
+}
+
+/* ─── EXPANDED PANEL ──────────────────────────────────────── */
+.card-expanded { display: none; }
+.card.open .card-expanded { display: block; }
+
+.exp-inner { padding: 16px; border-top: 1px solid var(--border); background: var(--bg); }
+
+.exp-label {
+  font-family: 'Space Mono', monospace; font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 7px; font-weight: 700;
+}
+.exp-full-desc { font-size: 13px; color: var(--textdim); line-height: 1.65; margin-bottom: 16px; font-weight: 600; }
+
+.exp-example {
+  background: var(--bg3); border: 1.5px solid var(--border);
+  border-radius: var(--r); padding: 12px 14px; margin-bottom: 16px;
+  position: relative; overflow: hidden;
+}
+.exp-example::before {
+  content: '▶';
+  position: absolute; top: 12px; right: 14px;
+  font-size: 10px; color: var(--textdimmer);
+}
+.exp-example .exp-label { color: var(--green); margin-bottom: 6px; }
+.exp-example-text { font-size: 13px; color: var(--text); line-height: 1.6; font-weight: 600; }
+
+.exp-props { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.exp-prop {
+  background: var(--bg4); border: 1px solid var(--border2);
+  border-radius: 5px; padding: 4px 10px;
+  font-size: 11px; color: var(--textdim); font-weight: 700;
+}
+
+.btn-docs {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-family: 'Space Mono', monospace;
+  color: var(--blue); text-decoration: none;
+  border: 1px solid rgba(79,195,247,0.3); border-radius: 6px;
+  padding: 4px 10px; transition: background 0.15s, border-color 0.15s;
+}
+.btn-docs:hover { background: var(--bluebg); border-color: var(--blue); }
+
+/* ─── EMPTY STATE ─────────────────────────────────────────── */
+#empty { display: none; flex-direction: column; align-items: center; justify-content: center; padding: 80px 24px; gap: 10px; }
+#empty.show { display: flex; }
+.empty-ico { font-size: 52px; opacity: 0.3; }
+.empty-txt { font-size: 18px; font-weight: 800; color: var(--textdim); }
+.empty-sub { font-size: 13px; color: var(--textdimmer); font-weight: 600; }
+
+/* ─── HUB SECTION ──────────────────────────────────────────── */
+#hub { display: none; }
+#hub.show { display: block; }
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.hub-card {
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r2);
+  padding: 20px;
+  transition: all 0.15s;
+}
+.hub-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+}
+.hub-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.hub-card-icon { font-size: 24px; }
+.hub-card-title {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--text);
+}
+.hub-card-content {
+  font-size: 13px;
+  color: var(--textdim);
+  line-height: 1.6;
+}
+.hub-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+.hub-stat {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 12px;
+  text-align: center;
+}
+.hub-stat-number {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+}
+.hub-stat-label {
+  font-size: 10px;
+  color: var(--textdimmer);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+.hub-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.hub-link-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 12px;
+  background: var(--bg3);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  color: var(--textdim);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.hub-link-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accentbg);
+}
+.hub-news-item {
+  background: var(--bg3);
+  border-left: 3px solid var(--accent);
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.hub-news-item:last-child { margin-bottom: 0; }
+.hub-news-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.hub-news-date {
+  font-size: 10px;
+  color: var(--textdimmer);
+  font-family: 'Space Mono', monospace;
+}
+.hub-tip {
+  background: linear-gradient(135deg, var(--accentbg), rgba(180,142,247,0.12));
+  border: 1.5px solid var(--border2);
+  border-radius: var(--r2);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.hub-tip-label {
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.hub-tip-content {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+/* ─── FOOTER ───────────────────────────────────────────────── */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+.footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+.footer-section h3 {
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.footer-section ul {
+  list-style: none;
+}
+.footer-section li {
+  margin-bottom: 10px;
+}
+.footer-section a {
+  font-size: 14px;
+  color: var(--textdim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-section a:hover {
+  color: var(--accent);
+}
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--bg3);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textdim);
+  text-decoration: none;
+  transition: all 0.15s;
+  font-size: 18px;
+}
+.social-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accentbg);
+}
+.footer-bottom {
+  max-width: 1440px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--textdimmer);
+}
+.footer-credit {
+  font-family: 'Space Mono', monospace;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 600px) {
+  header, .filter-bar, main { padding-left: 14px; padding-right: 14px; }
+  .logo-sub { display: none; }
+  .device-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 20px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .header-donate { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <div class="logo-badge">⚡</div>
+      <div>
+        <div class="logo-title">UEFN Devices</div>
+        <div class="logo-sub">Referencia Completa</div>
+      </div>
+    </a>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="Buscar dispositivo..." autocomplete="off" spellcheck="false">
+      <button class="clear-x" id="clearBtn">✕</button>
+    </div>
+    <div class="header-total"><b id="countVisible">0</b> / <span id="countTotal">0</span></div>
+    <div class="header-donate">
+      <button class="donate-btn" id="uefnToolBtn" style="background: linear-gradient(135deg, #f7b731, #e67e22); border-color: #f7b731; color: white;" title="Abrir UEFN Tool">🎨 Tool</button>
+      <a class="donate-btn paypal" href="LINK_PAYPAL" target="_blank" rel="noopener" title="Donar con PayPal">💳 PayPal</a>
+      <a class="donate-btn patreon" href="LINK_PATREON" target="_blank" rel="noopener" title="Apoyar en Patreon">❤ Patreon</a>
+    </div>
+  </div>
+</header>
+
+<!-- Modal UEFN Tool -->
+<div class="modal-overlay" id="uefnModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>🎨 UEFN Tool</h3>
+      <button class="modal-close" id="closeModal">&times;</button>
+    </div>
+    <iframe class="modal-iframe" src="https://uefntool.xyz/" title="UEFN Tool"></iframe>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-inner" id="filterBar"></div>
+</div>
+
+<main id="main">
+  <div id="hub">
+    <!-- TIP DESTACADO -->
+    <div class="hub-tip">
+      <div class="hub-tip-label">⚡ Tip del día</div>
+      <div class="hub-tip-content">Usá el <strong>Rastreador</strong> junto al <strong>Gestor de Puntuación</strong> para crear sistemas de progresión sin escribir Verse. Conectalos por canal y ahorrás decenas de líneas de código.</div>
+    </div>
+
+    <div class="hub-grid">
+      <!-- STATS CARD -->
+      <div class="hub-card">
+        <div class="hub-card-header">
+          <div class="hub-card-icon">📊</div>
+          <div class="hub-card-title">Referencia Completa</div>
+        </div>
+        <div class="hub-card-content" style="margin-bottom:12px; font-size:13px;">
+          Catálogo no oficial de todos los dispositivos disponibles en UEFN. Actualizado con cada patch de Fortnite Creative.
+        </div>
+        <div class="hub-stats">
+          <div class="hub-stat">
+            <div class="hub-stat-number" id="hubDevCount">—</div>
+            <div class="hub-stat-label">Dispositivos</div>
+          </div>
+          <div class="hub-stat">
+            <div class="hub-stat-number" id="hubCatCount">—</div>
+            <div class="hub-stat-label">Categorías</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK LINKS CARD -->
+      <div class="hub-card">
+        <div class="hub-card-header">
+          <div class="hub-card-icon">🔗</div>
+          <div class="hub-card-title">Comunidad</div>
+        </div>
+        <div class="hub-card-content" style="margin-bottom:12px; font-size:13px;">
+          Sumate a la comunidad de creadores. Compartí tus mapas, pedí ayuda con dispositivos y accedé a recursos exclusivos.
+        </div>
+        <div class="hub-links">
+          <a href="LINK_DISCORD" target="_blank" rel="noopener" class="hub-link-btn">💬 Discord</a>
+          <a href="LINK_PATREON" target="_blank" rel="noopener" class="hub-link-btn">❤ Patreon</a>
+          <a href="LINK_TWITTER" target="_blank" rel="noopener" class="hub-link-btn">𝕏 Twitter</a>
+          <a href="https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-documentation" target="_blank" rel="noopener" class="hub-link-btn">📄 Docs Epic</a>
+        </div>
+      </div>
+
+      <!-- NOTICIAS CARD -->
+      <div class="hub-card">
+        <div class="hub-card-header">
+          <div class="hub-card-icon">📰</div>
+          <div class="hub-card-title">Novedades UEFN</div>
+        </div>
+        <div class="hub-card-content">
+          <div class="hub-news-item">
+            <div class="hub-news-title">Verse 3.0 — Nuevas APIs de persistencia de datos entre sesiones</div>
+            <div class="hub-news-date">Abr 2025 · Epic Games Dev Blog</div>
+          </div>
+          <div class="hub-news-item">
+            <div class="hub-news-title">Dispositivo de Movimiento del Jugador sale de Beta en v34.00</div>
+            <div class="hub-news-date">Mar 2025 · Fortnite Creative Patch Notes</div>
+          </div>
+          <div class="hub-news-item">
+            <div class="hub-news-title">Nuevo Generador de PNJ con soporte de diálogos condicionales</div>
+            <div class="hub-news-date">Feb 2025 · UEFN Release Notes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIPS CARD -->
+      <div class="hub-card">
+        <div class="hub-card-header">
+          <div class="hub-card-icon">💡</div>
+          <div class="hub-card-title">Tips para Creadores</div>
+        </div>
+        <div class="hub-card-content">
+          <div class="hub-news-item">
+            <div class="hub-news-title">🔁 Usá el Secuenciador para encadenar eventos sin timers anidados — es más limpio y predecible.</div>
+          </div>
+          <div class="hub-news-item">
+            <div class="hub-news-title">🎯 El Activador de Percepción tiene radio configurable: bajarlo a 1–2m sirve para detección precisa en puzzles.</div>
+          </div>
+          <div class="hub-news-item">
+            <div class="hub-news-title">📡 Los canales son globales por isla — nombralos con prefijos (ej: <code style="font-size:11px;color:var(--accent)">door_</code>, <code style="font-size:11px;color:var(--accent)">score_</code>) para no pisarlos.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="empty" class="empty-state">
+    <div class="empty-ico">🔍</div>
+    <div class="empty-txt">Sin resultados</div>
+    <div class="empty-sub">Probá con otro término o categoría</div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-section">
+      <h3>Comunidad</h3>
+      <ul>
+        <li><a href="LINK_DISCORD" target="_blank" rel="noopener">Discord</a></li>
+        <li><a href="LINK_TWITTER" target="_blank" rel="noopener">Twitter / X</a></li>
+        <li><a href="LINK_YOUTUBE" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+      <div class="social-links">
+        <a class="social-btn" href="LINK_DISCORD" target="_blank" rel="noopener" title="Discord">💬</a>
+        <a class="social-btn" href="LINK_TWITTER" target="_blank" rel="noopener" title="Twitter">𝕏</a>
+        <a class="social-btn" href="LINK_YOUTUBE" target="_blank" rel="noopener" title="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>Apoyo</h3>
+      <ul>
+        <li><a href="LINK_PATREON" target="_blank" rel="noopener">Patreon</a></li>
+        <li><a href="LINK_PAYPAL" target="_blank" rel="noopener">PayPal — Donaciones</a></li>
+      </ul>
+      <p style="font-size:12px; color:var(--textdimmer); margin-top:10px; line-height:1.5;">
+        Este sitio es gratuito y sin publicidad. Si te es útil, considerá apoyarlo.
+      </p>
+    </div>
+    <div class="footer-section">
+      <h3>Recursos</h3>
+      <ul>
+        <li><a href="https://dev.epicgames.com/documentation/en-us/uefn/unreal-editor-for-fortnite-documentation" target="_blank" rel="noopener">Docs oficiales UEFN</a></li>
+        <li><a href="https://dev.epicgames.com/community/fortnite/getting-started/uefn" target="_blank" rel="noopener">Getting Started Epic</a></li>
+        <li><a href="https://www.fortnite.com/news" target="_blank" rel="noopener">Notas de parche Fortnite</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Créditos</h3>
+      <p style="font-size: 13px; color: var(--textdim); line-height: 1.6;">
+        Referencia no oficial de dispositivos UEFN. Datos basados en la documentación de Epic Games.<br><br>
+        © Fortnite y UEFN son propiedad de Epic Games Inc. Este sitio no está afiliado a Epic Games.
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-credit">UEFN Devices © 2025</span>
+    <span>Hecho con ⚡ para creadores de mapas</span>
+  </div>
+</footer>
+
+<script>
+// ─── LINKS CONFIG — editá acá tus links ──────────────────────
+const LINKS = {
+  discord:  "https://discord.gg/TU_SERVIDOR",
+  twitter:  "https://twitter.com/TU_USUARIO",
+  youtube:  "https://youtube.com/@TU_CANAL",
+  patreon:  "https://patreon.com/TU_USUARIO",
+  paypal:   "https://paypal.me/TU_USUARIO",
+};
+
+// Reemplazar LINK_* en el DOM con los links reales
+document.querySelectorAll("a[href^='LINK_']").forEach(a => {
+  const key = a.getAttribute("href").replace("LINK_", "").toLowerCase();
+  if (LINKS[key]) a.href = LINKS[key];
+});
+
+
+const CAT_COLORS = {
+  "Jugabilidad": { color: "#f7b731", bg: "rgba(247,183,49,0.12)", strip: "#f7b731" },
+  "Lógica":      { color: "#4fc3f7", bg: "rgba(79,195,247,0.12)", strip: "#4fc3f7" },
+  "IA":          { color: "#b48ef7", bg: "rgba(180,142,247,0.12)", strip: "#b48ef7" },
+  "IU":          { color: "#f368e0", bg: "rgba(243,104,224,0.12)", strip: "#f368e0" },
+  "Reactivación":{ color: "#4ef0a0", bg: "rgba(78,240,160,0.12)", strip: "#4ef0a0" },
+  "Trampa":      { color: "#ff6b6b", bg: "rgba(255,107,107,0.12)", strip: "#ff6b6b" },
+  "Audio":       { color: "#1dd1a1", bg: "rgba(29,209,161,0.12)", strip: "#1dd1a1" },
+  "Entorno":     { color: "#54a0ff", bg: "rgba(84,160,255,0.12)", strip: "#54a0ff" },
+  "Vehículos":   { color: "#ff9f43", bg: "rgba(255,159,67,0.12)", strip: "#ff9f43" },
+  "Sistema":     { color: "#c8d6e5", bg: "rgba(200,214,229,0.12)", strip: "#c8d6e5" },
+  "Elemento":    { color: "#ffeaa7", bg: "rgba(255,234,167,0.12)", strip: "#ffeaa7" },
+  "Modo":        { color: "#fd79a8", bg: "rgba(253,121,168,0.12)", strip: "#fd79a8" },
+  "Física":      { color: "#e17055", bg: "rgba(225,112,85,0.12)", strip: "#e17055" },
+  "Transversal": { color: "#6c5ce7", bg: "rgba(108,92,231,0.12)", strip: "#6c5ce7" },
+  "!Beta":       { color: "#fdcb6e", bg: "rgba(253,203,110,0.12)", strip: "#fdcb6e" },
+};
+
+function getCat(cat) {
+  return CAT_COLORS[cat] || { color: "#8888aa", bg: "rgba(136,136,170,0.10)", strip: "#8888aa" };
+}
+
+// ─── SVG ICONS ──────────────────────────────────────────────
+const ICONS = {
+  // Category icons
+  cat_Jugabilidad: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="8" cy="12" r="1.5" fill="currentColor"/><path d="M15 10v4M13 12h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  cat_Logica: `<svg viewBox="0 0 24 24" fill="none"><path d="M4 4h6v6H4V4zM14 4h6v6h-6V4zM4 14h6v6H4v-6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M17 14v6M14 17h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  cat_IA: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h-4M16 8h4M12 4V2M6.34 5.66L4.93 4.24M17.66 5.66l1.41-1.42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 15c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="9" y="15" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.8"/></svg>`,
+  cat_IU: `<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M2 8h20M6 12h4M6 15h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="14" y="11" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.8"/></svg>`,
+  cat_Reactivacion: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 4v4l3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4a8 8 0 100 16 8 8 0 000-16" stroke="currentColor" stroke-width="1.8" stroke-dasharray="3 2"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>`,
+  cat_Trampa: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 18H3L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4M12 17v1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>`,
+  cat_Audio: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 010 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 7a5 5 0 010 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>`,
+  cat_Entorno: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3a12.5 12.5 0 010 18M12 3a12.5 12.5 0 000 18" stroke="currentColor" stroke-width="1.8"/></svg>`,
+  cat_Vehiculos: `<svg viewBox="0 0 24 24" fill="none"><path d="M5 17H3a1 1 0 01-1-1v-5l2-4h14l2 4v5a1 1 0 01-1 1h-2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="17.5" r="2.5" stroke="currentColor" stroke-width="1.8"/><circle cx="16.5" cy="17.5" r="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M10 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  cat_Sistema: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+  cat_Elemento: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8"/><path d="M14 17.5h7M17.5 14v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  cat_Modo: `<svg viewBox="0 0 24 24" fill="none"><path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/></svg>`,
+  cat_Fisica: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  cat_Transversal: `<svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  cat_Beta: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+
+  // Device icons
+  button: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="8" rx="4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>`,
+  trigger: `<svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H13L13 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+  timer: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M12 9v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9 2h6M12 2v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  score: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+  endgame: `<svg viewBox="0 0 24 24" fill="none"><path d="M5 3h14a1 1 0 011 1v16l-3-2-3 2-3-2-3 2-3-2V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9h6M9 13h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  item_granter: `<svg viewBox="0 0 24 24" fill="none"><path d="M20 12V22H4V12" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M22 7H2v5h20V7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 22V7M12 7H7.5a2.5 2.5 0 010-5H12M12 7h4.5a2.5 2.5 0 000-5H12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  player_spawner: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M5 21a7 7 0 0114 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M19 3l2 2-2 2M21 5h-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  creature_spawner: `<svg viewBox="0 0 24 24" fill="none"><path d="M9 3H7a4 4 0 00-4 4v1a4 4 0 004 4h1M15 3h2a4 4 0 014 4v1a4 4 0 01-4 4h-1" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v18M9 12h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="18" r="2" stroke="currentColor" stroke-width="1.8"/></svg>`,
+  billboard: `<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 15v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 8h4M6 11h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  hud_message: `<svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 10h8M8 13h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  teleporter: `<svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="17" rx="8" ry="3" stroke="currentColor" stroke-width="1.8"/><path d="M4 17V7a8 3 0 0116 0v10" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v7M9 11l3 3 3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  mutator_zone: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="1.8" stroke-dasharray="3 2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.5"/></svg>`,
+  capture_area: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8" stroke-dasharray="3 2"/><path d="M8 3v18M16 3v18M3 8h18M3 16h18" stroke="currentColor" stroke-width="1.8" opacity="0.4"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/></svg>`,
+  elimination_manager: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z" stroke="currentColor" stroke-width="1.8"/><path d="M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  tracker: `<svg viewBox="0 0 24 24" fill="none"><path d="M3 12h4l3 7 4-14 3 7h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  leaderboard: `<svg viewBox="0 0 24 24" fill="none"><path d="M8 18v-8M12 18V4M16 18v-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  class_selector: `<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="8" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="6" width="8" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M10 12h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  team_settings: `<svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><circle cx="15" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M3 21a6 6 0 0112 0M9 21a6 6 0 0112 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  item_remover: `<svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M8 6V4h8v2M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  item_spawner: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2v6M9 5l3-3 3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="11" width="18" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 16h2M11 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  item_placer: `<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="12" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8"/><path d="M14 15l5-5M17 10l2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/></svg>`,
+  conditional_button: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="8" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M10 12h4M12 10v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 5l-2-2M16 5l2-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  counter: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 12h6M12 9v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 9h.01M17 9h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+  sequencer: `<svg viewBox="0 0 24 24" fill="none"><circle cx="5" cy="12" r="2" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="12" r="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 12h3M14 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  randomizer: `<svg viewBox="0 0 24 24" fill="none"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M3 4l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  accolade: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+  guard_spawner: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5 4 9 9 10 5-1 9-5 9-10V7L12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 18c.7-1.8 2.2-3 4-3s3.3 1.2 4 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  creature_placer: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M6 20v-2a6 6 0 0112 0v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 6l2-2M6 6L4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  audio_player: `<svg viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="16" r="3" stroke="currentColor" stroke-width="1.8"/></svg>`,
+  sfx_zone: `<svg viewBox="0 0 24 24" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  ambient_sound: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.5"/><path d="M8 12a4 4 0 008 0M6 12a6 6 0 0012 0M4 12a8 8 0 0016 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  sky_dome: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2a9 9 0 019 9H3a9 9 0 019-9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M2 11h20M3 15h18M6 19h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  storm_controller: `<svg viewBox="0 0 24 24" fill="none"><path d="M19 16.9A5 5 0 0018 7h-1.26A8 8 0 104 15.25M13 11l-4 6h6l-4 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  post_process_zone: `<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8" stroke-dasharray="2 2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  vehicle_spawner: `<svg viewBox="0 0 24 24" fill="none"><path d="M5 17H3a1 1 0 01-1-1v-5l2-4h14l2 4v5a1 1 0 01-1 1h-2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="17.5" r="2.5" stroke="currentColor" stroke-width="1.8"/><circle cx="16.5" cy="17.5" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>`,
+  vehicle_mod: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7L12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 10h3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  damage_volume: `<svg viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+  damage_booster: `<svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H13L13 2z" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+  launch_pad: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2v12M9 7l3-5 3 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="12" cy="17" rx="8" ry="3" stroke="currentColor" stroke-width="1.8"/><path d="M4 20v-3M20 20v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  trick_tile: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="10" width="18" height="4" rx="1" stroke="currentColor" stroke-width="1.8"/><path d="M7 10V7a5 5 0 0110 0v3" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="16" r="1.5" fill="currentColor"/></svg>`,
+  prop_manipulator: `<svg viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>`,
+  cinematic: `<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 6V2M17 6V2M7 18v4M17 18v4M2 10h20M2 14h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  analytics: `<svg viewBox="0 0 24 24" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  conversation: `<svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8" cy="10" r="1.2" fill="currentColor"/><circle cx="12" cy="10" r="1.2" fill="currentColor"/><circle cx="16" cy="10" r="1.2" fill="currentColor"/></svg>`,
+  decal: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 19l-7-7 7-7 7 7-7 7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 12H2M19 12h3M12 5V2M12 19v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  island_settings: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+  default_icon: `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M9 12h6M12 9v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
+};
+
+function getIcon(iconKey) {
+  return ICONS[iconKey] || ICONS.default_icon;
+}
+
+// ─── DEVICE DATA ──────────────────────────────────────────────
+const DATA = {
+  "Jugabilidad": [
+    {
+      id: "activador_percepcion", nombre: "Activador de Percepción", icono: "trigger",
+      corta: "Detecta cuando un jugador entra en su radio y dispara un evento por canal.",
+      completa: "Zona invisible esférica que se activa cuando un jugador se aproxima. No requiere interacción: la detección es automática. Puede configurarse para activarse solo con jugadores específicos (equipo, clase) o con todos. Ideal para trampas, puertas automáticas y puntos de control sin botón.",
+      ejemplo: "Colocalo frente a una puerta y conectalo al canal 'puerta_abre'. Cuando el jugador camina hacia ella, la puerta se abre sola sin necesidad de pulsar nada.",
+      props: ["Radio de detección", "Equipo objetivo", "Activación única / repetible", "Canal de salida"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/perception-trigger-device-in-fortnite"
+    },
+    {
+      id: "banco_accesorios", nombre: "Banco de Accesorios de Armas", icono: "item_granter",
+      corta: "Permite a los jugadores equipar accesorios y modificaciones a sus armas.",
+      completa: "Punto de interacción donde los jugadores pueden añadir o cambiar accesorios de sus armas (miras, silenciadores, cargadores). El inventario de accesorios disponibles se configura en las propiedades del dispositivo. Puede requerir pago en oro o ser gratuito.",
+      ejemplo: "En un mapa de supervivencia, colocalo en una base segura para que los jugadores mejoren su equipamiento antes de salir al combate.",
+      props: ["Accesorios disponibles", "Costo en oro", "Equipo habilitado"]
+    },
+    {
+      id: "barril_canas_pescar", nombre: "Barril de Cañas de Pescar", icono: "default_icon",
+      corta: "Prop interactivo que distribuye cañas de pescar a los jugadores.",
+      completa: "Elemento decorativo y funcional en forma de barril de madera que contiene cañas de pescar. Los jugadores pueden interactuar con él para obtener una caña. Útil en mapas de pesca o como objeto de ambientación en zonas costeras.",
+      ejemplo: "Colocalo cerca de una Zona de Pesca para que los jugadores sin caña puedan equiparse antes de pescar.",
+      props: ["Usos disponibles", "Reposición automática"]
+    },
+    {
+      id: "contador_estadisticas", nombre: "Contador de Estadísticas", icono: "counter",
+      corta: "Muestra una estadística numérica en el HUD del jugador en tiempo real.",
+      completa: "Vinculado a un Rastreador o estadística de juego, muestra el valor actual en pantalla. Se puede configurar el color, posición y etiqueta del contador. Acepta señales por canal para incrementar, decrementar o resetear el valor.",
+      ejemplo: "En un mapa de colección, mostrá cuántos cristales lleva el jugador. Conectalo al Rastreador de colección y configurá la etiqueta como 'Cristales'.",
+      props: ["Estadística vinculada", "Posición en HUD", "Etiqueta visible", "Canal de incremento / reset"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/stat-tracker-device-in-fortnite"
+    },
+    {
+      id: "controles_desplazamiento", nombre: "Controles de Desplazamiento Lateral", icono: "default_icon",
+      corta: "Restringe el movimiento del jugador al plano 2D horizontal, estilo plataformer.",
+      completa: "Modifica el esquema de control del jugador para que solo pueda moverse izquierda/derecha y saltar, bloqueando el eje de profundidad. Transforma la experiencia en un side-scroller clásico. Se puede activar y desactivar por canal para combinar con zonas de movimiento libre.",
+      ejemplo: "Usalo en toda la isla para crear un juego de plataformas 2D. Combinalo con cámaras laterales fijas para la perspectiva correcta.",
+      props: ["Eje bloqueado", "Canal de activación / desactivación"]
+    },
+    {
+      id: "controles_tercera_persona", nombre: "Controles en Tercera Persona", icono: "default_icon",
+      corta: "Cambia la cámara del jugador a perspectiva en tercera persona con cámara al hombro.",
+      completa: "Altera el modo de cámara al estilo over-the-shoulder típico de juegos de acción en tercera persona. La distancia y el ángulo son configurables. Se puede activar en zonas específicas o para toda la partida. Compatible con todos los modos de movimiento del jugador.",
+      ejemplo: "En un mapa RPG o de aventura, activalo al inicio para dar una sensación cinematográfica diferente al Battle Royale estándar.",
+      props: ["Distancia de cámara", "Altura del hombro", "Canal de activación"]
+    },
+    {
+      id: "creador_estadisticas", nombre: "Creador de Estadísticas", icono: "default_icon",
+      corta: "Define estadísticas personalizadas (fuerza, velocidad, maná) para sistemas RPG.",
+      completa: "Permite crear atributos numéricos personalizados que no existen por defecto en Fortnite. Cada estadística tiene nombre, valor inicial, mínimo y máximo. Otros dispositivos como el Potenciador de Estadística y el Evaluador de Atributos pueden leer y modificar estos valores.",
+      ejemplo: "Creá una estadística 'Maná' con valor inicial 100. Luego usá el Potenciador de Estadística para reducirla cuando el jugador usa habilidades.",
+      props: ["Nombre de la estadística", "Valor inicial", "Valor mínimo / máximo", "Persistencia entre rondas"]
+    },
+    {
+      id: "camara_banco", nombre: "Cámara de Banco", icono: "default_icon",
+      corta: "Cámara cenital fija que sigue al jugador desde arriba, estilo juego de mesa.",
+      completa: "Perspectiva aérea superior que mantiene al jugador centrado en pantalla mientras se mueve. Evoca la vista de juegos isométricos o de mesa. El zoom y la inclinación son configurables. Se puede combinar con Controles de Desplazamiento para un top-down completo.",
+      ejemplo: "Ideal para mapas de mazmorras con vista cenital. Combinalo con movimiento en todas direcciones para crear un dungeon crawler.",
+      props: ["Altura de cámara", "Ángulo de inclinación", "Zoom", "Canal de activación"]
+    },
+    {
+      id: "camara_punto_fijo", nombre: "Cámara de Punto Fijo", icono: "default_icon",
+      corta: "Coloca la cámara en una posición fija en el mundo, sin seguir al jugador.",
+      completa: "La cámara se ancla en una posición y ángulo específicos del nivel. El jugador se mueve libremente pero la vista no lo sigue. Útil para escenas cinemáticas activadas por trigger, salas con perspectiva de vigilancia o puzzles con cámara de seguridad.",
+      ejemplo: "En una sala de seguridad, mostrá la perspectiva de una cámara de vigilancia cuando el jugador entra al área, usando un Activador de Percepción para activarla.",
+      props: ["Posición XYZ", "Rotación", "Campo de visión (FOV)", "Canal de activación"]
+    },
+    {
+      id: "camara_angulo_fijo", nombre: "Cámara de Ángulo Fijo", icono: "default_icon",
+      corta: "Sigue al jugador pero mantiene un ángulo y distancia fijos, estilo survival horror.",
+      completa: "La cámara sigue la posición del jugador pero el ángulo de visión no cambia. El jugador puede rotar el personaje pero la cámara permanece orientada en la misma dirección relativa. Recrea la sensación de los primeros juegos de survival horror con cámaras preestablecidas.",
+      ejemplo: "En un mapa de horror, usá múltiples cámaras de ángulo fijo activadas por zonas para crear tensión con perspectivas dramáticas prediseñadas.",
+      props: ["Ángulo relativo", "Distancia al jugador", "Interpolación de transición"]
+    },
+    {
+      id: "camara_orbita", nombre: "Cámara de Órbita", icono: "default_icon",
+      corta: "Cámara orbital que rota alrededor de un punto fijo o del jugador.",
+      completa: "Genera una cámara que gira continuamente alrededor de un objetivo. Puede orbitar alrededor del jugador o de un punto fijo en el mundo. Configurable en velocidad, radio y plano de órbita. Útil para escenas de presentación, inspección de objetos o efectos dramáticos.",
+      ejemplo: "En la pantalla de inicio o lobby, apuntala a un punto central del mapa y configurá orbita lenta para crear un fondo animado mientras los jugadores esperan.",
+      props: ["Objetivo (jugador / punto fijo)", "Radio de órbita", "Velocidad angular", "Eje de rotación"]
+    },
+    {
+      id: "derribado_no_vencido", nombre: "Derribado pero no Vencido", icono: "default_icon",
+      corta: "Activa el estado de knockdown: el jugador cae al suelo pero puede ser reanimado.",
+      completa: "Implementa la mecánica de 'DBNO' (Down But Not Out) de Fortnite en modos personalizados. Cuando un jugador llega a 0 HP, en lugar de ser eliminado queda derribado en el suelo durante un tiempo configurable. Un compañero puede reanimarlo. Si el tiempo expira sin reanimar, es eliminado.",
+      ejemplo: "En un modo cooperativo 2v2, activalo para que el equipo deba coordinarse para reanimar compañeros caídos, agregando tensión táctica.",
+      props: ["Duración en el suelo", "HP al reanimar", "Reanimar solo / cualquiera", "Canal al ser derribado / reanimado"]
+    },
+    {
+      id: "dispositivo_barrera", nombre: "Dispositivo Barrera", icono: "default_icon",
+      corta: "Pared o zona invisible que bloquea el paso de jugadores según condiciones.",
+      completa: "Colisión invisible configurable en forma, tamaño y equipo al que aplica. Puede ser una barrera permanente o activarse/desactivarse por canal. Útil para separar fases de juego, bloquear acceso a zonas no desbloqueadas o crear paredes de equipo que solo dejan pasar a un bando.",
+      ejemplo: "En un mapa de asalto, colocalo en la entrada de la base enemiga y desactivalo por canal solo cuando el objetivo principal ha sido completado.",
+      props: ["Dimensiones", "Equipo bloqueado", "Canal de activar / desactivar", "Visible / invisible"]
+    },
+    {
+      id: "dispositivo_disfraz", nombre: "Dispositivo Disfraz", icono: "default_icon",
+      corta: "Cambia la skin visual del jugador cuando interactúa o entra en la zona.",
+      completa: "Aplica un disfraz predefinido al jugador que lo activa. Puede ser temporal (duración configurable) o permanente para esa sesión. El cambio de skin es puramente visual y no afecta gameplay. Se puede activar automáticamente al entrar a una zona o al interactuar con el dispositivo.",
+      ejemplo: "En un mapa de rol, asigná automáticamente el disfraz de 'guardia' a los jugadores del equipo defensor cuando empiezan la partida.",
+      props: ["Skin/disfraz seleccionado", "Duración", "Activación automática / manual", "Equipo objetivo"]
+    },
+    {
+      id: "fogata", nombre: "Fogata", icono: "default_icon",
+      corta: "Prop interactivo que regenera HP lentamente al jugador que permanece cerca.",
+      completa: "Elemento de campamento que emite calor en un radio pequeño. Los jugadores dentro del área recuperan salud pasivamente a una tasa configurable. Tiene usos limitados (combustible) o puede ser infinita según configuración. Añade mecánicas de supervivencia y zonas seguras.",
+      ejemplo: "En un mapa de supervivencia nocturno, colocá fogatas dispersas por el mapa para crear zonas de descanso donde los jugadores recuperan HP a cambio de quedarse quietos y expuestos.",
+      props: ["Radio de calor", "HP por segundo", "Usos / combustible", "Canal al activarse / apagarse"]
+    },
+    {
+      id: "galeria_maletines_armas", nombre: "Galería de Maletines de Armas Comunes", icono: "default_icon",
+      corta: "Rack de armas que permite a los jugadores tomar armas de rareza común al inicio.",
+      completa: "Punto de equipamiento que presenta un conjunto de armas comunes (gris) al comienzo de la partida o ronda. Los jugadores pueden interactuar para tomar las armas disponibles. El inventario es configurable y puede reponerse por canal. Ideal para modos con loadout igualitario.",
+      ejemplo: "En un modo arena equilibrada, usalo en la zona de spawn para que todos los jugadores comiencen con el mismo set de armas comunes, eliminando la ventaja del loot.",
+      props: ["Armas incluidas", "Cantidad por arma", "Reposición al inicio de ronda", "Uso único por jugador"]
+    },
+    {
+      id: "generador_entregas_suministros", nombre: "Generador de Entregas de Suministros", icono: "default_icon",
+      corta: "Genera cajas de suministros que caen del cielo en puntos del mapa.",
+      completa: "Crea eventos de airdrop en posiciones configuradas o aleatorias dentro de un radio. La caja cae con paracaídas, aterriza y puede ser abierta por cualquier jugador. El contenido es personalizable. Puede programarse con temporizador o activarse manualmente por canal.",
+      ejemplo: "En un mapa Battle Royale personalizado, programá una entrega cada 3 minutos en posición aleatoria para crear puntos de conflicto orgánicos durante la partida.",
+      props: ["Contenido del suministro", "Posición fija / aleatoria", "Intervalo de tiempo", "Canal de activación"]
+    },
+    {
+      id: "muneco_practica", nombre: "Muñeco de Práctica", icono: "default_icon",
+      corta: "Target estático que recibe daño, muestra números y puede reaparecer.",
+      completa: "Objetivo humanizado para entrenamiento de puntería. Muestra los números de daño recibido en tiempo real. Configurable en HP total, resistencias y comportamiento al morir (desaparecer, reutilizarse). Puede conectarse a contadores para llevar registro de daño total infligido.",
+      ejemplo: "En una sala de entrenamiento, colocá varios muñecos a distintas distancias y conectá cada uno a un contador de daño para que los jugadores midan su precisión.",
+      props: ["HP total", "Resistencia por tipo de daño", "Reaparición automática", "Canal al ser destruido"]
+    },
+    {
+      id: "potenciador_estadistica", nombre: "Potenciador de Estadística", icono: "default_icon",
+      corta: "Modifica temporalmente una estadística personalizada del jugador (buff / debuff).",
+      completa: "Incrementa o reduce el valor de una estadística creada con el Creador de Estadísticas. El efecto puede ser temporal (con duración configurable) o permanente para la sesión. Se puede encadenar múltiples potenciadores para crear sistemas de progresión complejos.",
+      ejemplo: "Cuando el jugador completa un desafío, usalo para aumentar su estadística de 'Velocidad' en 20 puntos durante 30 segundos como recompensa.",
+      props: ["Estadística objetivo", "Valor del cambio (+ / -)", "Duración del efecto", "Canal de activación"]
+    },
+    {
+      id: "recorrido_muneco", nombre: "Recorrido del Muñeco de Práctica", icono: "default_icon",
+      corta: "Define una ruta de waypoints para que los Muñecos de Práctica se muevan.",
+      completa: "Funciona junto al Muñeco de Práctica para crear targets móviles. Se colocan varios nodos de recorrido en el mapa y el muñeco los sigue en orden. Configurable en velocidad, tipo de movimiento (lineal, curvo) y comportamiento al llegar al último punto (volver, detenerse, loopear).",
+      ejemplo: "En un simulacro de combate, creá una ruta en zigzag para que el muñeco simule un jugador evasivo. Conectalo al Muñeco de Práctica asignándole este recorrido.",
+      props: ["Velocidad de movimiento", "Tipo de trayectoria", "Comportamiento al terminar ruta", "Número de waypoints"]
+    },
+    {
+      id: "teletransportador", nombre: "Teletransportador", icono: "teleporter",
+      corta: "Teletransporta instantáneamente al jugador a otro Teletransportador destino.",
+      completa: "Dispositivo de teletransporte en dos partes: un origen y un destino (identificado por canal o referencia directa). El jugador entra en el área de activación y aparece inmediatamente en el destino. Configurable para que sea de un sentido o bidireccional, y para distintos equipos.",
+      ejemplo: "Conectá dos teletransportadores con el mismo canal para crear un portal rápido entre la base y el campo de batalla. Activalo solo cuando se complete un objetivo.",
+      props: ["Canal de destino", "Sentido (uni / bidireccional)", "Equipo habilitado", "Efectos de entrada / salida"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/teleporter-device-in-fortnite"
+    },
+    {
+      id: "volumen_daño", nombre: "Volumen de Daño", icono: "damage_volume",
+      corta: "Zona de daño continuo o instantáneo que afecta a jugadores dentro de ella.",
+      completa: "Define un volumen 3D dentro del cual los jugadores reciben daño. El tipo de daño (fuego, caída, bala), la cantidad por segundo y el equipo afectado son configurables. Se puede activar y desactivar por canal. Puede mostrar efectos visuales opcionales para indicar el peligro.",
+      ejemplo: "En un deathrun, colocalo bajo una zona de lava sin textura visual de peligro. Los jugadores descubren el área peligrosa por la pérdida de HP, añadiendo incertidumbre.",
+      props: ["Daño por segundo", "Tipo de daño", "Equipo afectado", "Canal de activar / desactivar"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/damage-volume-device-in-fortnite"
+    },
+    {
+      id: "volumen_grieta", nombre: "Volumen del Punto de Grieta", icono: "default_icon",
+      corta: "Define la zona de aparición o uso de una grieta dimensional.",
+      completa: "Volumen que marca el área de influencia de una grieta de la realidad. Los jugadores dentro del volumen pueden interactuar con la grieta para entrar a zonas alternativas o acceder a eventos especiales. Funciona junto a triggers y secuencias para narrativa o teletransporte temático.",
+      ejemplo: "En un mapa de narrativa, colocá el volumen en una caverna y usalo para activar una secuencia cinemática cuando el jugador entra, como si cruzara a otra dimensión.",
+      props: ["Dimensiones del volumen", "Interacción habilitada", "Canal al entrar / salir"]
+    },
+    {
+      id: "zona_mutacion", nombre: "Zona de Mutación", icono: "mutator_zone",
+      corta: "Aplica modificadores de reglas específicos dentro de un área delimitada.",
+      completa: "Zona 3D que modifica las reglas del juego para los jugadores dentro de ella. Puede alterar: velocidad de movimiento, daño recibido, gravedad, materiales de construcción, armas habilitadas y más. Los efectos son inmediatos al entrar y se revierten al salir. Múltiples zonas pueden superponerse.",
+      ejemplo: "Creá una zona de gravedad reducida sobre una plataforma elevada para agregar un área de combate flotante con física alterada sin usar Verse.",
+      props: ["Mutación aplicada", "Valor del modificador", "Equipo afectado", "Canal de activar / desactivar"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/mutator-zone-device-in-fortnite"
+    },
+    {
+      id: "zona_pesca", nombre: "Zona de Pesca", icono: "default_icon",
+      corta: "Define un cuerpo de agua donde los jugadores pueden pescar con caña.",
+      completa: "Marca una zona de agua como área de pesca activa. Los jugadores con caña de pescar pueden interactuar en esta zona para pescar objetos configurables: peces, armas, consumibles o materiales. La tabla de loot y la probabilidad de cada item son personalizables.",
+      ejemplo: "En un mapa de supervivencia, definí zonas de pesca en ríos y lagos con distintas tablas de loot. Las zonas alejadas del spawn tienen mejores recompensas para motivar la exploración.",
+      props: ["Tabla de loot de pesca", "Velocidad de pesca", "Usos de la zona", "Canal al pescar"]
+    },
+  ],
+  "Lógica": [
+    {
+      id: "activador", nombre: "Activador", icono: "trigger",
+      corta: "Zona de detección que dispara eventos cuando un jugador entra o sale.",
+      completa: "El dispositivo de lógica más fundamental de UEFN. Define un área 3D invisible; cuando un jugador la cruza (entrada o salida), emite una señal por canal. Configurable para disparar una sola vez o repetidas veces, y para afectar solo a ciertos equipos. Base de casi toda lógica de eventos en mapas.",
+      ejemplo: "Colocalo al inicio de un pasillo y conectalo al canal 'trampa_activa'. Cuando el jugador lo cruce, activa la secuencia de trampas del corredor.",
+      props: ["Canal de salida (al entrar)", "Canal de salida (al salir)", "Equipo detectado", "Activación única / repetible"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/trigger-device-in-fortnite"
+    },
+    {
+      id: "activador_pulsos", nombre: "Activador de Pulsos", icono: "trigger",
+      corta: "Emite señales repetidas a intervalos regulares, como un metrónomo de eventos.",
+      completa: "A diferencia del Activador estándar, el de Pulsos no requiere presencia de jugadores. Emite señales por canal en intervalos de tiempo configurables desde que se activa. Puede iniciarse al comenzar la partida o mediante canal. Útil para sistemas de loop, animaciones periódicas y spawners rítmicos.",
+      ejemplo: "Configuralo cada 5 segundos y conectalo a un Generador de Criaturas. Cada 5 segundos spawneará una oleada de enemigos sin necesidad de lógica adicional.",
+      props: ["Intervalo (segundos)", "Cantidad de pulsos (o infinito)", "Canal de inicio / pausa", "Canal de salida"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/pulse-activator-device-in-fortnite"
+    },
+    {
+      id: "boton", nombre: "Botón", icono: "button",
+      corta: "Objeto interactivo que el jugador pulsa para emitir una señal por canal.",
+      completa: "El input más directo del jugador hacia la lógica del mapa. El jugador se acerca y ve el prompt de interacción; al pulsar, emite la señal. Configurable con texto personalizado, cooldown entre usos, usos máximos y costo en oro. Uno de los dispositivos más usados en toda experiencia UEFN.",
+      ejemplo: "Colocá un botón junto a una puerta con el texto 'Abrir'. Conectalo al canal 'puerta_abierta'. El jugador pulsa el botón y la puerta se mueve.",
+      props: ["Texto del prompt", "Cooldown", "Usos máximos", "Costo en oro", "Canal de salida"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/button-device-in-fortnite"
+    },
+    {
+      id: "boton_condicion", nombre: "Botón de Condición", icono: "conditional_button",
+      corta: "Botón que solo funciona si el jugador cumple una condición específica.",
+      completa: "Igual al Botón estándar pero con una capa de verificación: antes de emitir la señal, comprueba si el jugador cumple el requisito configurado (tener un ítem, pertenecer a un equipo, tener suficiente oro, haber completado un objetivo). Emite por canales distintos si la condición se cumple o no.",
+      ejemplo: "Usalo como puerta bloqueada que solo se abre si el jugador lleva la 'Llave Maestra' en su inventario. Si no la tiene, emite por el canal de fallo para mostrar un mensaje.",
+      props: ["Condición requerida", "Canal de éxito", "Canal de fallo", "Mensaje de error"]
+    },
+    {
+      id: "canal", nombre: "Canal", icono: "default_icon",
+      corta: "Sistema de comunicación invisible que conecta dispositivos entre sí.",
+      completa: "Los canales son el sistema nervioso de un mapa UEFN. Son identificadores de texto (ej: 'puerta_1') que los dispositivos usan como emisores y receptores. Un dispositivo emite en un canal y todos los que escuchan ese canal reaccionan. Los canales son globales por isla, por lo que conviene nombrarlos descriptivamente para evitar conflictos.",
+      ejemplo: "El Botón emite por 'jefe_spawn'. El Generador de Guardias escucha 'jefe_spawn' para activarse. El Cronómetro también escucha 'jefe_spawn' para iniciar el contador de la batalla.",
+      props: ["Nombre del canal (texto libre)", "Alcance (global por isla)"]
+    },
+    {
+      id: "casilla_trampa", nombre: "Casilla de Trampa", icono: "trick_tile",
+      corta: "Plataforma que se rompe, se activa o reacciona cuando el jugador la pisa.",
+      completa: "Tile especial del suelo o pared con comportamiento programable al ser pisado. Modos disponibles: destruirse después de X pisadas, activar una trampa, emitir señal por canal, o cambiar de estado visualmente. Fundamental en mapas de deathrun y puzzle.",
+      ejemplo: "En un deathrun, creá un suelo de casillas trampa donde solo 3 de cada 10 son seguras. Las falsas emiten por canal 'trampa_caer' para activar el daño.",
+      props: ["Modo (romper / activar / señal)", "Pisadas antes de activarse", "Canal de salida", "Visual de advertencia"]
+    },
+    {
+      id: "colocador_elementos", nombre: "Colocador de Elementos", icono: "default_icon",
+      corta: "Instancia props o elementos del juego en posiciones dinámicas durante la partida.",
+      completa: "Crea instancias de props, objetos del juego o elementos decorativos en tiempo de ejecución, no de diseño. Se le puede especificar qué elemento colocar, dónde y cuándo (por canal). Permite construir escenas dinámicas, revelar zonas ocultas o generar obstáculos en tiempo real.",
+      ejemplo: "Al completar la primera fase de un mapa narrativo, activalo por canal para 'construir' el puente hacia la siguiente zona, creando la sensación de que el mundo cambia con las acciones del jugador.",
+      props: ["Elemento a colocar", "Posición relativa / absoluta", "Canal de activación", "Canal de destrucción"]
+    },
+    {
+      id: "cronometro", nombre: "Cronómetro", icono: "timer",
+      corta: "Temporizador visible en HUD que cuenta hacia arriba o hacia abajo.",
+      completa: "Muestra un reloj en pantalla para uno, varios o todos los jugadores. Puede contar regresivamente desde un tiempo máximo o de forma progresiva. Emite señales por canal al iniciarse, pausarse, reanudarse y al llegar a cero. Configurable en visibilidad y posición del HUD.",
+      ejemplo: "En un modo de rescate, iniciá un cronómetro de 3 minutos al comenzar la ronda. Si llega a cero sin rescatar al rehén, emite por 'tiempo_agotado' para terminar la ronda.",
+      props: ["Duración", "Dirección (cuenta atrás / progresiva)", "Canal de inicio / pausa", "Canal al terminar"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/timer-device-in-fortnite"
+    },
+    {
+      id: "dispositivo_bloqueo", nombre: "Dispositivo de Bloqueo", icono: "default_icon",
+      corta: "Bloquea o desbloquea la interacción con otros dispositivos según condiciones.",
+      completa: "Actúa como compuerta lógica: impide que otros dispositivos reciban señales o sean interactuados hasta que el Dispositivo de Bloqueo sea desbloqueado. Útil para secuenciar eventos y garantizar que ciertas acciones solo ocurran en el momento correcto del juego.",
+      ejemplo: "Bloqueá el Botón de la puerta final hasta que el jugador haya completado los 3 objetivos previos. Cada objetivo completado emite un canal; el tercer canal desbloquea el botón.",
+      props: ["Estado inicial (bloqueado / desbloqueado)", "Canal de bloquear", "Canal de desbloquear"]
+    },
+    {
+      id: "dispositivo_fin_partida", nombre: "Dispositivo de Fin de Partida", icono: "endgame",
+      corta: "Termina la partida y muestra la pantalla de resultados al recibir una señal.",
+      completa: "Cuando recibe una señal por canal, finaliza la sesión de juego para todos los jugadores y presenta la pantalla de resultados. Configurable para declarar ganadores por equipo, por jugador individual o sin ganador. Puede mostrar texto personalizado en la pantalla de fin.",
+      ejemplo: "Conectá el Gestor de Puntuación al canal 'equipo_gana' y el Dispositivo de Fin de Partida que escucha ese canal. Cuando un equipo llega a 50 puntos, la partida termina.",
+      props: ["Equipo ganador", "Texto de fin de partida", "Canal de activación"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/end-game-device-in-fortnite"
+    },
+    {
+      id: "evaluador_atributos", nombre: "Evaluador de Atributos", icono: "default_icon",
+      corta: "Compara el valor de una estadística del jugador y emite por canal según el resultado.",
+      completa: "Lee el valor de una estadística (creada con el Creador de Estadísticas u oficial del juego) y la compara con un umbral. Si la condición se cumple (mayor que, igual a, menor que), emite por un canal; si no, por otro. Permite lógica condicional basada en el estado del jugador.",
+      ejemplo: "Evaluá si el jugador tiene más de 50 de 'Maná'. Si es verdad, emite 'habilidad_disponible'. Si es falso, emite 'habilidad_bloqueada' para mostrar un mensaje de error.",
+      props: ["Estadística a evaluar", "Operador (>, =, <)", "Valor umbral", "Canal de verdadero / falso"]
+    },
+    {
+      id: "gatillo_entrada", nombre: "Gatillo de Entrada", icono: "trigger",
+      corta: "Detecta un input de control específico del jugador y lo convierte en señal.",
+      completa: "Convierte una acción de control (saltar, agacharse, interactuar, disparar) en una señal de canal cuando la ejecuta un jugador específico o cualquiera. Permite que las acciones físicas del jugador tengan significado lógico más allá de su función habitual. Útil en puzzles y minijuegos.",
+      ejemplo: "En un puzzl de ritmo, detectá la acción 'saltar' con el Gatillo de Entrada y conectalo al Cronómetro para validar si el jugador saltó en el momento correcto.",
+      props: ["Input detectado", "Canal de salida", "Equipo habilitado", "Consumir input (sí/no)"]
+    },
+    {
+      id: "generador_numeros_aleatorios", nombre: "Generador de Números Aleatorios", icono: "randomizer",
+      corta: "Genera un número aleatorio dentro de un rango y emite por canal correspondiente.",
+      completa: "Al activarse por canal o al inicio, elige un número al azar dentro del rango mínimo-máximo configurado. Puede emitir por un canal específico para cada número posible, o por un canal de salida con el valor como parámetro. Fundamental para loot aleatorio, spawns variables y mecánicas de azar.",
+      ejemplo: "Configuralo en rango 1-3. Cada número tiene un canal de salida: '1' activa una trampa de fuego, '2' una trampa de pinchos, '3' no pasa nada. El jugador no sabe qué le espera.",
+      props: ["Rango mínimo / máximo", "Canal de activación", "Canal de salida por valor"]
+    },
+    {
+      id: "gestor_senales_remotas", nombre: "Gestor de Señales Remotas", icono: "default_icon",
+      corta: "Centraliza y redirige señales de canal, actuando como hub de lógica.",
+      completa: "Recibe señales de múltiples canales de entrada y las redirige a canales de salida según reglas configuradas. Puede actuar como compuerta AND (emite solo si todas las entradas se activaron), OR, o como relay simple. Reduce la complejidad de lógicas con muchos dispositivos interconectados.",
+      ejemplo: "Configuralo como compuerta AND con 3 entradas: 'objetivo_1', 'objetivo_2', 'objetivo_3'. Solo emite 'todos_completados' cuando los 3 canales de entrada hayan sido activados.",
+      props: ["Canales de entrada", "Tipo de compuerta (AND / OR / relay)", "Canal de salida"]
+    },
+    {
+      id: "grupo_votacion", nombre: "Grupo de Votación", icono: "default_icon",
+      corta: "Agrupa Opciones de Votación y gestiona el resultado de la votación de jugadores.",
+      completa: "Trabaja junto a múltiples Opciones de Votación para crear sistemas de democracia en el mapa. Los jugadores votan durante un tiempo configurable; al terminar, el Grupo de Votación calcula el resultado y emite por el canal de la opción ganadora. Útil para elegir modos, mapas o reglas dinámicamente.",
+      ejemplo: "Al inicio de la partida, mostrá 3 opciones de modo de juego (Deathmatch, Zombis, Carrera). El Grupo de Votación determina el modo más votado y emite el canal correspondiente para activarlo.",
+      props: ["Tiempo de votación", "Opciones vinculadas", "Canal de resultado", "Mostrar resultados en HUD"]
+    },
+    {
+      id: "interruptor", nombre: "Interruptor", icono: "default_icon",
+      corta: "Toggle de estado binario (on/off) que el jugador activa manualmente.",
+      completa: "A diferencia del Botón (que emite una vez por pulsación), el Interruptor mantiene un estado. Al pulsarlo, cambia de apagado a encendido emitiendo por un canal, y al volver a pulsarlo cambia a apagado emitiendo por otro canal. Ideal para mecanismos que deben permanecer activos hasta desactivarse.",
+      ejemplo: "En un mapa de escondite, el interruptor de las luces: pulsarlo una vez apaga las luces (emite 'luces_off'), volver a pulsarlo las enciende (emite 'luces_on').",
+      props: ["Estado inicial", "Canal al activar (on)", "Canal al desactivar (off)", "Texto del prompt"]
+    },
+    {
+      id: "manipulador_elementos", nombre: "Manipulador de Elementos", icono: "prop_manipulator",
+      corta: "Mueve, rota o escala props y elementos del mapa durante la partida.",
+      completa: "Permite animar props del nivel en tiempo de ejecución sin usar Verse. Puede trasladar, rotar o escalar un elemento de referencia con curvas de interpolación configurables. Se activa por canal. Fundamental para puertas, trampas mecánicas, plataformas móviles y cualquier elemento que deba moverse.",
+      ejemplo: "Asignalo a una puerta de madera. Al recibir la señal 'puerta_abre', la rota 90° en 0.5 segundos con suavizado de entrada y salida.",
+      props: ["Prop objetivo", "Transformación (traslación / rotación / escala)", "Duración de la animación", "Curva de interpolación", "Canal de activación"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/prop-manipulator-device-in-fortnite"
+    },
+    {
+      id: "objetivo_cronometrado", nombre: "Objetivo Cronometrado", icono: "timer",
+      corta: "Tarea con límite de tiempo: si se completa en plazo emite éxito, si no, fallo.",
+      completa: "Combina la lógica de un objetivo (condición a cumplir) con un temporizador. Al activarse, inicia la cuenta regresiva y espera la señal de completado. Si llega antes de que el tiempo expire, emite por el canal de éxito. Si el tiempo se agota primero, emite por el canal de fallo. El HUD muestra el tiempo restante.",
+      ejemplo: "En un mapa de escape, el jugador debe desactivar 3 trampas en 90 segundos. El Objetivo Cronometrado gestiona el tiempo; si lo logra, emite 'escape_exitoso'.",
+      props: ["Tiempo límite", "Condición de completado", "Canal de éxito", "Canal de fallo / tiempo agotado", "Visible en HUD"]
+    },
+    {
+      id: "opcion_votacion", nombre: "Opción de Votación", icono: "default_icon",
+      corta: "Representa una opción seleccionable dentro de un sistema de votación.",
+      completa: "Componente del sistema de votación. Cada Opción de Votación representa una alternativa (modo, mapa, regla). Se muestra en el HUD con texto e ícono personalizables. Los jugadores votan con su interacción. Al finalizar la votación (gestionada por el Grupo de Votación), si esta opción gana, emite por su canal de salida.",
+      ejemplo: "Creá 3 Opciones de Votación: 'Modo Lava', 'Modo Hielo', 'Modo Normal'. Cada una conectada a su canal de activación de reglas. El Grupo de Votación elige la ganadora.",
+      props: ["Texto de la opción", "Ícono", "Grupo de Votación al que pertenece", "Canal si es elegida"]
+    },
+    {
+      id: "rastreador", nombre: "Rastreador", icono: "tracker",
+      corta: "Registra el progreso de una estadística o contador para un jugador o equipo.",
+      completa: "Monitorea en tiempo real el valor de estadísticas del juego (eliminaciones, daño, objetos recogidos, etc.) para jugadores individuales o equipos. Emite señales por canal al alcanzar umbrales configurables. Se puede vincular a Contadores de Estadísticas para visualización en HUD y a Rankings para comparar jugadores.",
+      ejemplo: "Rastrea las eliminaciones de cada jugador. Al llegar a 5, emite 'jugador_mvp'. Al llegar a 10, emite 'win_condition'. Vinculalo al Gestor de Puntuación para el marcador.",
+      props: ["Estadística rastreada", "Objetivo (umbral)", "Canal al alcanzar objetivo", "Alcance (jugador / equipo)"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/tracker-device-in-fortnite"
+    },
+    {
+      id: "reloj_tiempo_real", nombre: "Reloj de Tiempo Real", icono: "timer",
+      corta: "Sincroniza eventos del mapa con la hora real del servidor de juego.",
+      completa: "A diferencia del Cronómetro (que cuenta desde cero), el Reloj de Tiempo Real usa el tiempo absoluto del servidor. Permite sincronizar eventos entre múltiples instancias del mapa o crear sistemas que ocurren a horas específicas. Útil para modos con eventos mundiales coordinados.",
+      ejemplo: "En un mapa con eventos del mundo, emitir una señal exactamente cada hora real para activar un jefe especial simultáneamente en todas las instancias del servidor.",
+      props: ["Referencia de tiempo", "Intervalo de emisión", "Canal de sincronización"]
+    },
+    {
+      id: "volumen", nombre: "Volumen", icono: "default_icon",
+      corta: "Zona 3D invisible que emite señales al entrar o salir, con formas personalizables.",
+      completa: "Similar al Activador pero con mayor flexibilidad de forma: puede ser cúbico, esférico o cilíndrico. Define un espacio 3D que emite señales al entrar y al salir. También puede consultarse activamente (¿está el jugador dentro?) desde Verse. Útil como zona de detección para lógica compleja.",
+      ejemplo: "Colocá un volumen cúbico en una habitación entera. Al entrar el primer jugador, emitir 'sala_ocupada'. Al salir el último, emitir 'sala_vacia' para reiniciar la trampa.",
+      props: ["Forma (caja / esfera / cilindro)", "Dimensiones", "Equipo detectado", "Canal al entrar / salir"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/volume-device-in-fortnite"
+    },
+  ],
+  "IA": [
+    {
+      id: "administrador_criaturas", nombre: "Administrador de Criaturas", icono: "creature_spawner",
+      corta: "Gestiona el comportamiento global de todas las criaturas de la isla.",
+      completa: "Dispositivo maestro que controla parámetros globales de las IAs: agresividad general, alcance de detección, cantidad máxima simultánea en el mapa y comportamiento al respawnear. Funciona en conjunto con todos los spawners de criaturas. Ajustar solo este dispositivo afecta a todos los enemigos de la isla sin tocarlos uno a uno.",
+      ejemplo: "En un mapa PvE con oleadas, bajá la agresividad en las primeras rondas y aumentala gradualmente activando el Administrador por canal al comenzar cada fase.",
+      props: ["Agresividad global", "Límite de criaturas simultáneas", "Canal de activación / desactivación"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/creature-manager-device-in-fortnite"
+    },
+    {
+      id: "centinela", nombre: "Centinela", icono: "guard_spawner",
+      corta: "Guarda IA fijo que patrulla un área y ataca jugadores al detectarlos.",
+      completa: "Enemigo de inteligencia artificial que permanece en una posición o sigue una ruta de patrulla definida. Al detectar un jugador (configurable por distancia y ángulo de visión), lo persigue y ataca. Tiene HP, daño y velocidad configurables. Puede emitir señales por canal al ser eliminado.",
+      ejemplo: "Colocá centinelas en los accesos a una base enemiga. Asignales una ruta de patrulla corta con Nodos de Patrulla. Al ser eliminados emiten 'centinela_muerto' para contar bajas.",
+      props: ["HP", "Daño", "Rango de detección", "Ángulo de visión", "Canal al ser eliminado"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/sentinel-device-in-fortnite"
+    },
+    {
+      id: "controlador_dispositivo_personaje", nombre: "Controlador de Dispositivo de Personaje", icono: "default_icon",
+      corta: "Envía comandos por canal a un Dispositivo de Personaje para controlarlo remotamente.",
+      completa: "Intermediario de lógica entre la red de canales del mapa y el Dispositivo de Personaje. Permite activar, desactivar, mover o cambiar el estado de un personaje NPC desde cualquier evento del mapa. Útil para crear NPCs que reaccionan al progreso del jugador sin necesidad de Verse.",
+      ejemplo: "Cuando el jugador completa el primer objetivo, el Controlador activa al NPC aliado que estaba inactivo, haciéndolo caminar hasta el jugador y entablar conversación.",
+      props: ["Dispositivo de Personaje objetivo", "Acción a ejecutar", "Canal de activación"]
+    },
+    {
+      id: "dispositivo_personaje", nombre: "Dispositivo de Personaje", icono: "default_icon",
+      corta: "Define la apariencia, diálogos y comportamiento base de un NPC.",
+      completa: "Crea un personaje no jugador con skin personalizada, diálogos configurables y comportamiento inicial. Puede estar quieto, seguir al jugador, o iniciar conversación al acercarse. Funciona con el Controlador de Dispositivo de Personaje para responder a eventos del mapa. Base para narrativa y quests.",
+      ejemplo: "En un mapa de aventura, creá un NPC mercader con skin específica y diálogos de bienvenida. Al completar una misión, el Controlador cambia su diálogo a la recompensa.",
+      props: ["Skin del personaje", "Diálogos asignados", "Comportamiento inicial", "Canal al interactuar"]
+    },
+    {
+      id: "dispositivo_modificador_desplazamiento", nombre: "Dispositivo Modificador de Desplazamiento", icono: "default_icon",
+      corta: "Altera los parámetros de movimiento de criaturas IA dentro de una zona.",
+      completa: "Modifica la velocidad, el tipo de movimiento (caminar, correr, volar) y el radio de acción de las IAs que entran en su área de influencia. Permite crear zonas donde los enemigos se vuelven más lentos o rápidos, o cambian su patrón de movimiento.",
+      ejemplo: "Colocalo en un pasillo estrecho para que los guardias lo recorran lentamente, dando al jugador más tiempo para reaccionar. Fuera del pasillo, los guardias recuperan velocidad normal.",
+      props: ["Modificador de velocidad (%)", "Tipo de movimiento forzado", "Equipo afectado (IA / jugador)"]
+    },
+    {
+      id: "generador_animales_salvajes", nombre: "Generador de Animales Salvajes", icono: "creature_spawner",
+      corta: "Spawnea animales salvajes (jabalíes, lobos, pollos) con comportamiento nativo de Fortnite.",
+      completa: "Genera animales con sus comportamientos originales de Fortnite: los jabalíes atacan al ser provocados, los lobos cazan en manadas, los pollos permiten planear. La especie, cantidad y frecuencia de reaparición son configurables. Añade vida al entorno sin necesidad de programar IA desde cero.",
+      ejemplo: "En un mapa de supervivencia en la selva, spawnea manadas de jabalíes y lobos cerca de los recursos de comida para crear zonas de riesgo natural.",
+      props: ["Especie de animal", "Cantidad máxima", "Intervalo de reaparición", "Agresividad"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/wildlife-spawner-device-in-fortnite"
+    },
+    {
+      id: "generador_criaturas", nombre: "Generador de Criaturas", icono: "creature_spawner",
+      corta: "Spawnea criaturas personalizadas de UEFN con comportamiento configurable.",
+      completa: "Crea enemigos del catálogo de criaturas de UEFN (distintos a los animales salvajes). Configurable en tipo de criatura, HP, daño, comportamiento (agresivo, neutro, defensivo) y punto de spawn. Se puede activar manualmente por canal o en ciclos automáticos. Permite controlar el número máximo activo simultáneamente.",
+      ejemplo: "Conectalo a un Activador de Pulsos que emite cada 30 segundos para crear oleadas continuas de criaturas. Al llegar a 10 eliminaciones emitir el canal de victoria.",
+      props: ["Tipo de criatura", "HP y daño", "Máximo simultáneo", "Canal de activación", "Canal al eliminar una criatura"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/creature-spawner-device-in-fortnite"
+    },
+    {
+      id: "generador_guardias", nombre: "Generador de Guardias", icono: "guard_spawner",
+      corta: "Spawnea guardias humanoides con armas, equipamiento y comportamiento táctico.",
+      completa: "Genera NPCs humanoides armados con skin, arma y comportamiento configurables. A diferencia de las criaturas, los guardias usan las mecánicas de combate de Fortnite: buscan cobertura, usan armas de fuego y pueden alertar a otros guardias. Tienen HP, escudo y loot al morir configurables.",
+      ejemplo: "En una base enemiga, colocá 4 generadores de guardias en posiciones estratégicas. Configurá distintas armas para cada uno (francotirador, escopeta, subfusil) para crear encuentros variados.",
+      props: ["Skin del guardia", "Arma equipada", "HP / Escudo", "Loot al morir", "Canal al ser eliminado"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/guard-spawner-device-in-fortnite"
+    },
+    {
+      id: "nodo_ruta_patrulla", nombre: "Nodo de la Ruta de Patrulla de la IA", icono: "default_icon",
+      corta: "Waypoint que define un punto de paso en la ruta de patrulla de guardias o criaturas.",
+      completa: "Marcador invisible en el mundo que forma parte de una ruta de patrulla. Se colocan varios nodos numerados en secuencia y se asignan al Generador de Guardias o Centinela. La IA los recorre en orden, con tiempo de espera configurable en cada nodo. Las rutas pueden ser lineales o circulares.",
+      ejemplo: "Colocá 5 nodos formando un perímetro alrededor de un edificio. Asignalos al Generador de Guardias en orden del 1 al 5. El guardia recorrerá el perímetro indefinidamente.",
+      props: ["Número de orden en la ruta", "Tiempo de espera en el nodo", "Acción al llegar (mirar, alertar, esperar)"]
+    },
+    {
+      id: "ubicador_criaturas", nombre: "Ubicador de Criaturas", icono: "creature_placer",
+      corta: "Coloca una criatura específica en una posición fija del mapa desde el inicio.",
+      completa: "A diferencia del Generador (que crea criaturas dinámicamente), el Ubicador posiciona una criatura única en el mapa al inicio de la partida o al activarse. La criatura permanece en esa posición hasta que es eliminada. Útil para jefes o guardias narrativamente importantes.",
+      ejemplo: "Colocá un jefe al final de una mazmorra usando el Ubicador para que esté siempre en la misma posición. Conectalo al Dispositivo de Fin de Partida para que al eliminarlo termine la misión.",
+      props: ["Tipo de criatura", "HP", "Canal al ser eliminado"]
+    },
+  ],
+  "IU": [
+    {
+      id: "baliza", nombre: "Baliza", icono: "billboard",
+      corta: "Marcador 3D visible en el mundo que señala un punto de interés al jugador.",
+      completa: "Crea un indicador visual flotante (flecha, ícono, texto) anclado a una posición del mapa. Visible a través de paredes y a larga distancia. Se puede activar y desactivar por canal, cambiar de color y personalizar el texto. Ideal para guiar jugadores hacia objetivos o marcar puntos de interés.",
+      ejemplo: "Al iniciar una misión, activá una baliza sobre el objetivo con el texto 'Destino'. Desactivala cuando el jugador llegue usando un Activador de Percepción.",
+      props: ["Texto / ícono", "Color", "Distancia visible", "Canal de activar / desactivar"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/beacon-device-in-fortnite"
+    },
+    {
+      id: "controlador_hud", nombre: "Controlador del HUD", icono: "hud_message",
+      corta: "Muestra u oculta elementos del HUD nativo de Fortnite según necesites.",
+      completa: "Permite controlar la visibilidad de cada elemento del HUD estándar: barra de vida, escudo, munición, minimapa, temporizador, marcadores de equipo, etc. Puede ocultar el HUD completo para experiencias cinematográficas o mostrar solo elementos específicos para modos minimalistas.",
+      ejemplo: "En una experiencia de horror, ocultá todo el HUD excepto la barra de vida. La ausencia de información crea más tensión. Mostrá el HUD completo solo en zonas de combate.",
+      props: ["Elementos a mostrar / ocultar", "Canal de activación", "Aplicar a todos / equipo / jugador específico"]
+    },
+    {
+      id: "controlador_mapa", nombre: "Controlador del Mapa", icono: "billboard",
+      corta: "Controla qué se muestra en el minimapa y el mapa de pantalla completa.",
+      completa: "Gestiona la visibilidad de iconos, zonas y marcadores en el mapa del jugador. Puede revelar o ocultar zonas del mapa, añadir iconos personalizados en posiciones específicas y controlar si el minimapa está visible. Útil para experiencias de exploración donde el mapa se va revelando progresivamente.",
+      ejemplo: "En un mapa de exploración, iniciá con el mapa completamente oculto. Al visitar cada zona, activá el Controlador para revelar ese fragmento del mapa como recompensa de exploración.",
+      props: ["Zona del mapa afectada", "Revelar / ocultar", "Icono personalizado", "Canal de activación"]
+    },
+    {
+      id: "dispositivo_conversacion", nombre: "Dispositivo de Conversación", icono: "conversation",
+      corta: "Abre un panel de diálogo interactivo con opciones de respuesta para el jugador.",
+      completa: "Muestra una interfaz de conversación con texto, nombre del personaje e imagen opcional. Puede presentar múltiples opciones de respuesta, cada una emitiendo por un canal diferente según la elección. Permite crear sistemas de diálogo ramificado sin Verse. Las elecciones pueden afectar el desarrollo del juego.",
+      ejemplo: "Un NPC ofrece al jugador dos misiones. El Dispositivo de Conversación muestra las opciones; la elección A emite 'mision_a_inicio', la B emite 'mision_b_inicio' para activar la ruta correspondiente.",
+      props: ["Texto del diálogo", "Nombre / imagen del personaje", "Opciones de respuesta", "Canal por opción elegida"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/conversation-device-in-fortnite"
+    },
+    {
+      id: "dispositivo_dialogos_emergentes", nombre: "Dispositivo de Diálogos Emergentes", icono: "conversation",
+      corta: "Muestra un pop-up de texto en pantalla sin interrumpir el gameplay.",
+      completa: "A diferencia del Dispositivo de Conversación (que pausa la acción), los diálogos emergentes aparecen como subtítulos o cuadros de texto superpuestos sin bloquear el control del jugador. Ideal para narración ambiental, tutoriales contextuales y diálogos de personajes durante el movimiento.",
+      ejemplo: "Cuando el jugador entra a una sala oscura, activá un emergente con el texto de un personaje: 'Aquí fue donde todo empezó...'. El jugador puede seguir moviéndose mientras lee.",
+      props: ["Texto del mensaje", "Posición en pantalla", "Duración visible", "Nombre del personaje (opcional)", "Canal de activación"]
+    },
+    {
+      id: "dispositivo_informacion_mensajes", nombre: "Dispositivo de Información de Mensajes", icono: "hud_message",
+      corta: "Muestra mensajes informativos en el feed de chat del juego.",
+      completa: "Envía mensajes de texto al feed de notificaciones del juego (el área inferior izquierda donde aparecen las eliminaciones). Se puede personalizar el color y prefijo. Sirve para anuncios globales, logros del jugador y información de sistema que no requiere detener la acción.",
+      ejemplo: "Cuando un jugador logra 3 eliminaciones seguidas, mostrá en el feed: '🔥 [Nombre] está en racha'. Conectalo al Rastreador de eliminaciones con umbral 3.",
+      props: ["Texto del mensaje", "Color del texto", "Destinatario (todos / equipo / jugador)", "Canal de activación"]
+    },
+    {
+      id: "dispositivo_interaccion_habilidad", nombre: "Dispositivo de Interacción de Habilidad", icono: "default_icon",
+      corta: "Crea un prompt de habilidad personalizado que el jugador puede activar con un botón.",
+      completa: "Añade una habilidad activable mediante un botón de acción contextual (como el prompt de interacción, pero para acciones especiales). Muestra un ícono y texto personalizados en pantalla. Al activarse, emite por canal. Permite crear habilidades especiales, poderes temporales o acciones únicas del jugador.",
+      ejemplo: "En un mapa con rol de héroe, añadí una habilidad 'Escudo Protector' que aparece disponible solo cuando el jugador tiene 3 de maná. Al activarla emite 'escudo_activo'.",
+      props: ["Texto de la habilidad", "Ícono", "Cooldown", "Condición de disponibilidad", "Canal de activación"]
+    },
+    {
+      id: "dispositivo_mensajes_hud", nombre: "Dispositivo de Mensajes del HUD", icono: "hud_message",
+      corta: "Muestra mensajes grandes y destacados en el centro de pantalla.",
+      completa: "Presenta texto en posición prominente en la pantalla del jugador, con mayor tamaño y visibilidad que los mensajes de feed. Configurable en duración, color, animación de entrada/salida y destinatario. Es el dispositivo principal para comunicar objetivos, avisos importantes y anuncios de fases.",
+      ejemplo: "Al iniciar cada oleada en un mapa PvE, mostrá '¡Oleada 3 de 5! — Los enemigos son más fuertes' durante 3 segundos en el centro de pantalla.",
+      props: ["Texto del mensaje", "Duración", "Color / estilo", "Destinatario", "Canal de activación"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/hud-message-device-in-fortnite"
+    },
+    {
+      id: "dispositivo_indicador_mapa", nombre: "Dispositivo Indicador del Mapa", icono: "billboard",
+      corta: "Añade un ícono personalizado en el minimapa para señalar ubicaciones clave.",
+      completa: "Coloca un marcador permanente o temporal en el minimapa del jugador. Configurable en ícono (de la biblioteca de UEFN), color y texto asociado. Se puede activar y desactivar por canal. A diferencia de la Baliza (que aparece en el mundo 3D), este indicador solo es visible en el mapa.",
+      ejemplo: "Al iniciar la partida, marcá las posiciones de los 3 objetivos en el minimapa con íconos de estrella. Al completar cada uno, desactivá su indicador.",
+      props: ["Ícono del marcador", "Color", "Texto asociado", "Visible en minimapa / mapa completo", "Canal de activar / desactivar"]
+    },
+    {
+      id: "holopantalla", nombre: "Holopantalla", icono: "billboard",
+      corta: "Pantalla holográfica 3D en el mundo que muestra texto, estadísticas o imágenes.",
+      completa: "Objeto físico en el mapa que actúa como monitor o pantalla flotante. Puede mostrar texto estático, valores dinámicos de estadísticas del juego, contadores o imágenes. Visible para todos los jugadores en el mundo 3D. Configurable en tamaño, color y contenido actualizable por canal.",
+      ejemplo: "En el centro del mapa, colocá una holopantalla que muestre el marcador en tiempo real: 'Equipo A: [puntos] vs Equipo B: [puntos]'. Se actualiza automáticamente con el Gestor de Puntuación.",
+      props: ["Contenido mostrado", "Tamaño", "Color del holograma", "Actualización dinámica", "Canal de actualizar contenido"]
+    },
+    {
+      id: "marcador_jugador", nombre: "Marcador de Jugador", icono: "default_icon",
+      corta: "Muestra un indicador visual sobre un jugador específico para destacarlo.",
+      completa: "Añade un marcador visual (flecha, ícono, corona) sobre la cabeza de un jugador determinado. Útil para señalar al portador de un objetivo, al MVP actual, al jugador con más puntos o al objetivo de una caza. Visible para todos o solo para ciertos equipos.",
+      ejemplo: "En un modo 'Caza al Líder', el jugador con más puntos recibe automáticamente una corona sobre su cabeza visible para todos, convirtiéndolo en objetivo de todos.",
+      props: ["Ícono del marcador", "Color", "Visible para (todos / equipo)", "Canal de asignar / quitar"]
+    },
+    {
+      id: "valla_publicitaria", nombre: "Valla Publicitaria", icono: "billboard",
+      corta: "Pantalla física grande en el mundo para mostrar texto o imágenes decorativas.",
+      completa: "Prop de gran tamaño que funciona como cartelera o pantalla de información. A diferencia de la Holopantalla (holográfica), la Valla Publicitaria es un objeto físico sólido con apariencia de pantalla real. Puede personalizarse con texto e imágenes estáticas. Ideal para ambientación, señalización y decoración temática.",
+      ejemplo: "En un mapa de ciudad futurista, colocá vallas con nombres de tiendas y anuncios ficticios para crear inmersión urbana. En mapas competitivos, usalas para mostrar las reglas del modo.",
+      props: ["Texto / imagen mostrada", "Tamaño", "Iluminación", "Animación (estática / scroll)"]
+    },
+  ],
+  "Reactivación": [
+    {
+      id: "potenciador_efectos_visuales", nombre: "Potenciador de Efectos Visuales", icono: "damage_booster",
+      corta: "Power-up que aplica efectos visuales especiales al jugador que lo toca.",
+      completa: "Objeto recogible que activa efectos de partículas o visuales sobre el jugador: aura de fuego, electrificación, brillo, etc. Los efectos son configurables en duración y tipo. No afecta el gameplay directamente, pero puede combinarse con otros dispositivos para señalar estados especiales del jugador.",
+      ejemplo: "En un modo donde el portador del objetivo está marcado visualmente, usalo para que el jugador con la bandera tenga un aura dorada visible para todos.",
+      props: ["Tipo de efecto visual", "Duración", "Canal de activación", "Visible para todos / solo el jugador"]
+    },
+    {
+      id: "potenciador_mejora_daño", nombre: "Potenciador de Mejora de Daño", icono: "damage_booster",
+      corta: "Power-up recogible que aumenta el daño del jugador temporalmente.",
+      completa: "Objeto que el jugador puede recoger del suelo para obtener un multiplicador de daño configurable durante un tiempo determinado. El porcentaje de aumento, la duración y el tipo de daño afectado (todas las armas, solo cuerpo a cuerpo, etc.) son personalizables. Emite señal al ser recogido.",
+      ejemplo: "En un mapa de arena, colocá uno en el centro del mapa con reposición cada 60 segundos. El jugador que controle el centro gana ventaja de daño, creando un punto de conflicto estratégico.",
+      props: ["Multiplicador de daño (%)", "Duración del efecto", "Tipo de daño afectado", "Tiempo de reaparición", "Canal al ser recogido"]
+    },
+    {
+      id: "potenciador_salud", nombre: "Potenciador de Salud", icono: "damage_booster",
+      corta: "Power-up que restaura o aumenta la salud del jugador al recogerlo.",
+      completa: "Objeto recogible que recupera una cantidad configurable de HP al jugador. Puede restaurar salud básica, escudo o ambos. Configurable en cantidad curada, si cura en el momento o regenera con el tiempo, y límite máximo (para permitir superar el HP base). Puede tener tiempo de reaparición.",
+      ejemplo: "Dispersá potenciadores de salud por el mapa con reposición de 30 segundos. Los jugadores deben salir de la zona segura para curar, creando momentos de decisión táctica.",
+      props: ["HP restaurado", "Tipo (salud / escudo / ambos)", "Curación instantánea / regenerativa", "Tiempo de reaparición"]
+    },
+    {
+      id: "potenciador_machacador", nombre: "Potenciador Machacador", icono: "damage_booster",
+      corta: "Power-up que potencia los ataques cuerpo a cuerpo del jugador temporalmente.",
+      completa: "Al recogerlo, aumenta significativamente el daño y el impulso de los ataques de pico/hacha del jugador. El jugador puede destruir materiales y estructuras más rápido y hacer más daño cuerpo a cuerpo. Útil en modos de construcción o para crear zonas de combate melee intenso.",
+      ejemplo: "En un mapa de asalto, colocalo cerca de las paredes defensivas enemigas para que los atacantes tengan la opción de destruir las defensas rápidamente si toman el riesgo de acercarse.",
+      props: ["Multiplicador de daño melee (%)", "Duración", "Efecto visual al estar activo", "Canal al ser recogido"]
+    },
+  ],
+  "Trampa": [
+    {
+      id: "damage_volume", nombre: "Damage Volume", icono: "damage_volume",
+      corta: "Zona de daño continuo configurable, la base de toda trampa de área.",
+      completa: "Define una zona 3D que inflige daño de manera continua o instantánea. Configurable en tipo de daño, cantidad, equipo afectado y activación por canal. Es el dispositivo de daño más flexible: puede simular lava, veneno, electricidad, vacío o cualquier peligro ambiental ajustando sus parámetros.",
+      ejemplo: "En el piso de un pasillo crea un Damage Volume de daño de 'fuego' con 10 HP/s. Activalo y desactivalo con un Activador de Pulsos para crear un suelo intermitente de lava.",
+      props: ["Daño por segundo", "Tipo de daño", "Equipo afectado", "Canal de activar / desactivar"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/damage-volume-device-in-fortnite"
+    },
+    {
+      id: "trick_tile", nombre: "Trick Tile", icono: "trick_tile",
+      corta: "Plataforma que se rompe, cambia o colapsa al ser pisada.",
+      completa: "Tile de suelo especial con comportamiento configurable al contacto: puede derrumbarse después de X pisadas, activar una trampa, emitir señal o simplemente desaparecer. El jugador puede ver o no la señal visual de peligro según la configuración. Esencial en deathruns y mapas de puzzles de plataformas.",
+      ejemplo: "Creá un puente de 20 tiles trampa. Solo 5 de ellos son reales (no se rompen). Los otros 15 colapsan al pisarse emitiendo 'trampa_activada'. El jugador debe memorizar el camino.",
+      props: ["Tipo de reacción (colapsar / activar / señal)", "Pisadas antes de activarse", "Señal visual de advertencia", "Canal de salida"]
+    },
+    {
+      id: "damage_booster", nombre: "Damage Booster", icono: "damage_booster",
+      corta: "Objeto que aumenta el daño recibido por el jugador en lugar de infligirlo directamente.",
+      completa: "A diferencia del Volumen de Daño (que daña directamente), el Damage Booster amplifica el daño que el jugador recibe de otras fuentes mientras está bajo su efecto. Puede aplicarse como trampa de área o como condición de estado. Útil para zonas de alta dificultad o para penalizar ciertas acciones.",
+      ejemplo: "En una zona de jefe, colocá un Damage Booster invisible que hace que el jefe haga el doble de daño si el jugador está dentro del área. Fuerza a los jugadores a moverse constantemente.",
+      props: ["Multiplicador de daño recibido (%)", "Duración", "Tipo de daño amplificado", "Canal de activación"]
+    },
+    {
+      id: "launch_pad", nombre: "Launch Pad", icono: "launch_pad",
+      corta: "Plataforma que lanza al jugador hacia arriba al pisarla.",
+      completa: "Objeto interactivo que propulsa al jugador verticalmente al contacto, desplegando automáticamente el paracaídas. La fuerza de lanzamiento, dirección y si el paracaídas se abre son configurables. Se puede activar y desactivar por canal. En contexto de trampa, se usa para crear saltos forzados hacia zonas de peligro.",
+      ejemplo: "En un deathrun, colocá un Launch Pad que lanza al jugador hacia una zona de obstáculos aéreos. El jugador debe navegar los obstáculos antes de aterrizar.",
+      props: ["Fuerza de lanzamiento", "Dirección", "Abrir paracaídas automático", "Canal de activar / desactivar"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/launch-pad-device-in-fortnite"
+    },
+  ],
+  "Audio": [
+    {
+      id: "audio_player", nombre: "Audio Player", icono: "audio_player",
+      corta: "Reproduce música o audio de fondo para toda la isla o para un jugador.",
+      completa: "Dispositivo de reproducción de música ambiental o narrativa. Acepta assets de audio de la biblioteca de UEFN o música subida por el creador. Configurable en volumen, fade in/out, loop y si se reproduce para todos o solo para jugadores específicos. Se activa y pausa por canal.",
+      ejemplo: "Cambiá la música de fondo según la fase del juego: música tranquila en el lobby, música de tensión al comenzar, música de batalla durante el combate. Cada Activador de fase controla su propio Audio Player.",
+      props: ["Asset de audio", "Volumen", "Loop", "Fade in / out", "Canal de reproducir / pausar / detener"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/music-player-device-in-fortnite"
+    },
+    {
+      id: "mezclador_sonido", nombre: "Mezclador de Sonido", icono: "audio_player",
+      corta: "Ajusta los parámetros globales de audio de la isla: volumen, reverb, mezcla.",
+      completa: "Controlador maestro del audio de la experiencia. Permite subir o bajar el volumen de categorías de audio (música, SFX, voces) de forma independiente, aplicar efectos de procesado (reverb de cueva, eco, filtro de radio) y crear transiciones suaves entre configuraciones de audio. Se controla por canal.",
+      ejemplo: "Al entrar a una cueva, activá el Mezclador con perfil 'cueva' que añade reverb y reduce el volumen de la música exterior. Al salir, volvé al perfil 'exterior' con fade suave de 1 segundo.",
+      props: ["Perfil de mezcla", "Volumen por categoría", "Efecto de procesado", "Duración del fade", "Canal de activación"]
+    },
+    {
+      id: "radio", nombre: "Radio", icono: "audio_player",
+      corta: "Prop de radio interactivo que los jugadores pueden encender/apagar y cambiar de emisora.",
+      completa: "Objeto físico en el mundo con el que el jugador puede interactuar para controlar la reproducción de audio. Funciona como el objeto Radio nativo de Fortnite pero con canciones y emisoras configurables por el creador. Añade interactividad ambiental y puede usarse como elemento narrativo.",
+      ejemplo: "En un mapa de exploración, colocá radios en distintas habitaciones. Al encender la de una sala secreta suena una pista de audio con información narrativa o coordenadas de un tesoro.",
+      props: ["Canciones / emisoras disponibles", "Estado inicial (on/off)", "Canal al encender / apagar"]
+    },
+    {
+      id: "reproductor_sonidos", nombre: "Reproductor de Sonidos", icono: "audio_player",
+      corta: "Reproduce un efecto de sonido puntual al recibir una señal por canal.",
+      completa: "A diferencia del Audio Player (continuo), el Reproductor de Sonidos reproduce un SFX corto y puntual: un clic, una explosión, un rugido, una voz. Se activa por canal y puede estar posicionado en el mundo 3D (con atenuación por distancia) o reproducirse directamente en el HUD del jugador.",
+      ejemplo: "Cada vez que el jugador recoge un ítem, activá el Reproductor de Sonidos con el SFX de 'recogida' para refuerzo sonoro de la acción. Cada tipo de ítem tiene su propio Reproductor con sonido distinto.",
+      props: ["Asset de SFX", "Volumen", "Posicionado en mundo / en HUD", "Canal de activación"]
+    },
+    {
+      id: "sfx_zone", nombre: "SFX Zone", icono: "sfx_zone",
+      corta: "Zona que reproduce efectos de sonido ambientales mientras el jugador está dentro.",
+      completa: "Define un volumen 3D donde se reproducen SFX de ambiente de forma continua o periódica: viento, agua, fuego, insectos, maquinaria. El volumen del SFX aumenta al entrar y disminuye al salir con fade configurable. Múltiples zonas pueden superponerse para crear paisajes sonoros complejos.",
+      ejemplo: "Colocá una SFX Zone de 'río' sobre el agua del mapa para que el jugador escuche el agua corriente al acercarse. Superponela con una zona de 'pájaros' para enriquecer el ambiente.",
+      props: ["Asset de SFX ambiental", "Volumen máximo", "Fade in / out al entrar y salir", "Loop", "Canal de activar / silenciar"],
+      docs: "https://dev.epicgames.com/documentation/en-us/uefn/sound-effect-zone-device-in-fortnite"
+    },
+    {
+      id: "ambient_sound", nombre: "Ambient Sound Volume", icono: "ambient_sound",
+      corta: "Volumen de sonido ambiental 3D con atenuación realista por distancia.",
+      completa: "Similar a la SFX Zone pero con comportamiento de audio 3D más realista: el sonido se atenúa con la distancia desde el centro del volumen, simula dirección y puede tener oclusión por obstáculos. Ideal para fuentes de sonido puntuales como una fogata, una máquina o una cascada.",
+      ejemplo: "Colocá uno en el centro de una cascada decorativa. El jugador escucha el agua más fuerte cuanto más cerca está, y el sonido desaparece naturalmente al alejarse, sin cortes bruscos.",
+      props: ["Asset de audio", "Radio de atenuación máxima / mínima", "Volumen en el centro", "Forma del volumen", "Canal de activar / silenciar"]
+    },
+  ],
+  "Entorno": [
+    { id: "agua", nombre: "Agua", icono: "default_icon", corta: "Volumen de agua navegable donde los jugadores pueden nadar y bucear.", completa: "Define un cuerpo de agua con física de natación activa. Los jugadores entran en modo natación al contacto. Configurable en color, transparencia y corriente direccional. Combinalo con Zonas de Pesca y SFX Zones para ríos y lagos completamente funcionales.", ejemplo: "En un mapa de exploración, colocá un río que divide el mapa con corriente lateral. Los jugadores deben cruzarlo a nado y la corriente los desplaza, añadiendo dificultad de traversal.", props: ["Color / transparencia", "Velocidad de corriente", "Dirección de la corriente"] },
+    { id: "cactus_sorbete", nombre: "Cactus de Sorbete", icono: "default_icon", corta: "Flora interactiva: inflige daño de pinchos pero otorga regeneración de escudo.", completa: "Planta nativa de Fortnite con mecánica de riesgo-recompensa: al rozarla el jugador recibe daño de pinchos, pero también obtiene el efecto Sorbete de regeneración de escudo. Ideal para biomas desérticos y tropicales donde el escudo es recurso escaso.", ejemplo: "En una zona desértica, los cactus son el único recurso de escudo. El jugador decide si vale la pena el daño recibido para regenerar escudo antes de entrar al combate.", props: ["Daño al tocar", "Escudo otorgado"] },
+    { id: "calcomanía", nombre: "Calcomanía", icono: "decal", corta: "Imagen proyectada sobre superficies del mapa sin colisión.", completa: "Proyecta texturas sobre la geometría del mundo: manchas, grafitis, señales de suelo, logos, huellas o cualquier imagen del catálogo de UEFN. No tiene colisión física. Enriquece visualmente las superficies sin añadir geometría adicional.", ejemplo: "Colocá calcomanías de huellas de botas en el suelo que guían al jugador hacia un objetivo oculto, creando una pista visual sutil integrada en el entorno.", props: ["Imagen / textura", "Escala", "Opacidad", "Proyección (plano / envolvente)"] },
+    { id: "dispositivo_malla_progreso", nombre: "Dispositivo de Malla Basada en el Progreso", icono: "default_icon", corta: "Prop que cambia de apariencia según el valor de una estadística o contador.", completa: "Asociado a una estadística, el prop cambia visualmente (color, estado de daño, forma) a medida que el valor progresa entre umbrales configurables. Permite objetos que muestran estado: una puerta que se deteriora, una barra de energía física, una estructura que se construye.", ejemplo: "Un cofre que empieza cerrado (0%), se entreabre al 50% de objetivos y se abre completamente al 100%, sin necesidad de Verse ni lógica adicional.", props: ["Prop asociado", "Estadística vinculada", "Estados visuales por umbral"] },
+    { id: "dispositivo_posprocesado", nombre: "Dispositivo de Posprocesado", icono: "post_process_zone", corta: "Aplica efectos de imagen globales: bloom, viñeta, aberración cromática, LUT.", completa: "Modifica la imagen renderizada con efectos de cámara sobre toda la pantalla del jugador: bloom, viñeta, aberración cromática, desenfoque, temperatura de color y LUT de paleta. Activa y desactiva por canal. Afecta la percepción visual sin cambiar nada del mundo 3D.", ejemplo: "Al entrar a una zona de pesadilla, activa aberración cromática y viñeta intensa para crear desorientación visual sin mover ningún objeto del escenario.", props: ["Bloom", "Viñeta", "Temperatura de color", "LUT", "Aberración cromática", "Canal de activación"] },
+    { id: "dispositivo_secuenciador_dia", nombre: "Dispositivo Secuenciador del Día", icono: "sequencer", corta: "Controla el ciclo de día y noche con horas y velocidad configurables.", completa: "Gestiona la posición del sol/luna y la iluminación global de la isla. Puede fijarse en una hora, crear ciclo automático o avanzar el tiempo por canal. La velocidad del ciclo es libre. Afecta la iluminación de todos los objetos y el Sky Dome simultáneamente.", ejemplo: "En un mapa de supervivencia, configura un ciclo de 10 minutos: 7 de día para explorar y 3 de noche donde las criaturas nocturnas se activan por canal.", props: ["Hora inicial", "Duración del ciclo completo", "Canal para avanzar / pausar el tiempo"] },
+    { id: "generador_luciernagas", nombre: "Generador de Luciérnagas", icono: "default_icon", corta: "Partículas de luciérnagas flotantes para atmósferas nocturnas o mágicas.", completa: "Sistema de partículas que genera pequeñas luces flotantes imitando luciérnagas. Sin colisión ni IA, puramente decorativo. Configurable en densidad, color, radio de dispersión y velocidad. Muy efectivo para bosques nocturnos, zonas mágicas o de fantasía.", ejemplo: "Colocalo en los bordes de un bosque oscuro para crear atmósfera mágica. Combinalo con luz tenue personalizable para que las luciérnagas sean la única fuente de luz de la zona.", props: ["Densidad", "Color", "Radio de dispersión", "Velocidad de movimiento"] },
+    { id: "generador_multitudes", nombre: "Generador de Multitudes", icono: "default_icon", corta: "Genera NPCs decorativos estáticos para poblar zonas concurridas.", completa: "Crea figuras de personajes sin comportamiento de IA para ambientar áreas: gradas de estadio, mercados, ciudades. No consumen recursos de IA. La skin, cantidad y distribución son configurables. Aportan vida visual sin impacto en el rendimiento.", ejemplo: "En un mapa de estadio, llena las gradas con multitudes decorativas que animan el espacio sin el costo de rendimiento de cientos de IAs reales.", props: ["Cantidad", "Densidad", "Skins disponibles", "Radio de distribución"] },
+    { id: "luz_personalizable", nombre: "Luz Personalizable", icono: "default_icon", corta: "Fuente de luz puntual, spot o área con color, intensidad y sombras configurables.", completa: "Añade iluminación dinámica con control total: tipo (puntual, spot, área), color, intensidad, radio, sombras y parpadeo. Se activa y apaga por canal. Combinado con el Rig de Iluminación Ambiental permite diseñar cualquier atmósfera lumínica.", ejemplo: "Luces rojas parpadeantes en una sala de alarma. Al activar el canal 'alarma_activa', las luces se encienden creando tensión visual sin cambiar la geometría.", props: ["Tipo de luz", "Color", "Intensidad", "Radio", "Parpadeo", "Canal de encender / apagar"] },
+    { id: "malla_animada", nombre: "Malla Animada", icono: "default_icon", corta: "Prop 3D con animación en bucle: engranajes, banderas, cascadas, llamas.", completa: "Objeto del catálogo UEFN con animación predefinida en loop. No requiere configuración de animación. Útil para maquinaria en movimiento, elementos naturales (cascadas, llamas, vegetación) y decoración dinámica que da vida al entorno sin partículas.", ejemplo: "Aspas de molino girando, banderas ondeando y engranajes de maquinaria en movimiento para dar vida a un mapa steampunk sin usar sistemas de partículas.", props: ["Asset animado", "Velocidad de reproducción", "Canal de pausar / reanudar"] },
+    { id: "maniqui_baile", nombre: "Maniquí de Baile", icono: "default_icon", corta: "Figura articulada que ejecuta emotes de Fortnite en bucle continuo.", completa: "Prop humanizado que realiza cualquier emote del catálogo de Fortnite de forma continua. Configurable en emote, velocidad y reacción al interactuar. Uso decorativo, guía visual de zonas de baile o elemento narrativo.", ejemplo: "En la zona de festejo al final del mapa, varios maniquíes bailando distintos emotes crean un ambiente de celebración cuando el jugador completa el recorrido.", props: ["Emote seleccionado", "Velocidad de animación", "Interacción del jugador habilitada"] },
+    { id: "rig_iluminacion_ambiental", nombre: "Rig de Iluminación Ambiental", icono: "default_icon", corta: "Controlador maestro de la iluminación global: ambiente, niebla, sombras, exposición.", completa: "Gestiona parámetros de iluminación a nivel isla: luz ambiental global, color del ambiente, intensidad de sombras, niebla volumétrica y exposición. Trabaja junto al Sky Dome. Cambiar un perfil aquí afecta visualmente a toda la isla de inmediato.", ejemplo: "Dos perfiles: 'día soleado' (cálido, sombras largas) y 'noche tormentosa' (azul frío, niebla, sombras suaves). Se alternan por canal según la fase del juego.", props: ["Perfil de iluminación", "Color ambiental", "Intensidad de niebla", "Exposición global", "Canal de activación"] },
+    { id: "saliente", nombre: "Saliente", icono: "default_icon", corta: "Superficie con borde agarrable para hacer ledge-grab al saltar.", completa: "Geometría cuyo borde superior es detectado por el sistema de ledge-grab de Fortnite. Los jugadores pueden agarrarse del borde al saltar y subir. Fundamental en mapas de plataformas para crear escalada natural sin escaleras.", ejemplo: "En un parkour vertical, los salientes permiten trepar paredes usando el sistema nativo de agarres, sin necesidad de escaleras ni rampas.", props: ["Dimensiones", "Material visual", "Altura agarrable"] },
+    { id: "silla", nombre: "Silla", icono: "default_icon", corta: "Mobiliario interactivo: el jugador puede sentarse al acercarse.", completa: "Mueble con interacción de sentado habilitada. El jugador ve el prompt 'Sentarse' y al interactuar entra en la animación. Útil para cinemáticas, zonas de espera y ambientación de interiores. La interacción se puede desactivar por canal.", ejemplo: "En una sala de interrogatorio narrativa, el jugador debe sentarse para iniciar la conversación con el NPC, creando una secuencia controlada.", props: ["Interacción habilitada (sí/no)", "Canal al sentarse", "Canal al levantarse"] },
+    { id: "barril_nitro", nombre: "Barril de Nitro", icono: "default_icon", corta: "Barril explosivo que detona al recibir daño o por señal de canal.", completa: "Objeto destructible con explosión en cadena: al recibir suficiente daño o activarse por canal, explota causando daño en radio a jugadores y estructuras. Puede activar otros barriles próximos en reacción encadenada.", ejemplo: "3 barriles en cadena en la entrada de un campamento: el primero explota al ser disparado y activa los demás, limpiando el área antes de que el jugador entre.", props: ["HP antes de explotar", "Radio de explosión", "Daño", "Reacción en cadena", "Canal de activación"] },
+    { id: "dispositivo_explosivo", nombre: "Dispositivo Explosivo", icono: "default_icon", corta: "Carga explosiva activable por canal, temporizador o proximidad.", completa: "Trampa explosiva cuyo radio, daño y método de activación son configurables. Puede destruir estructuras y aplicar knockback. Invisible hasta detonar o con apariencia de prop. Clave en modos de desactivación de bombas y trampas de área.", ejemplo: "En un modo de desactivación, este dispositivo es 'la bomba' que el equipo atacante debe desactivar antes de que el temporizador la detone.", props: ["Activación (canal / temporizador / proximidad)", "Radio", "Daño", "Canal de desactivar"] },
+    { id: "flor_bomba", nombre: "Flor Bomba", icono: "default_icon", corta: "Planta explosiva que detona al recibir daño o al detectar jugadores cerca.", completa: "Flora con mecánica explosiva: al recibir daño o detectar un jugador en su radio de detección, explota causando daño de área. Convierte la vegetación en campo minado natural. Configurable en radio de detección y daño.", ejemplo: "En un corredor de jungla, dispersa flores bomba entre la vegetación normal. El jugador debe moverse despacio e identificarlas para no activarlas.", props: ["Radio de detección", "Daño de explosión", "Reaparición tras detonar"] },
+    { id: "flor_fetida", nombre: "Flor Fétida", icono: "default_icon", corta: "Planta tóxica que libera gas dañino al activarse por proximidad o daño.", completa: "Flora que al activarse emite una nube de gas con daño por segundo y posibles efectos de ralentización o ceguera. El radio y duración del gas son configurables. Crea zonas de control natural usando el entorno como arma.", ejemplo: "Flores fétidas en los estrechos pasajes de un laberinto. El jugador debe correr a través antes de que el gas lo afecte demasiado.", props: ["Radio del gas", "Daño por segundo", "Duración del gas", "Efecto adicional (ralentizar / cegar)"] },
+    { id: "monolito_explorador", nombre: "Monolito Explorador", icono: "default_icon", corta: "Estructura antigua interactiva: al activarla revela información o dispara eventos.", completa: "Prop de estilo ruina o artefacto que tiene interacción configurable. Al activarlo puede mostrar texto narrativo, revelar parte del mapa, emitir por canal o reproducir audio. Perfecto para mapas de aventura y exploración narrativa.", ejemplo: "5 monolitos dispersos por el mapa. Al explorar y activar los 5, el jugador desbloquea la entrada a la zona final como recompensa de exploración.", props: ["Texto / audio al activar", "Canal de salida", "Visible en minimapa"] },
+    { id: "monolito_supremo", nombre: "Monolito Supremo", icono: "default_icon", corta: "Landmark monumental de gran tamaño, visible desde cualquier punto del mapa.", completa: "Versión grande del Monolito Explorador. Su escala lo hace visible desde lejos y funciona como referencia visual dominante del mapa. Orienta a los jugadores naturalmente hacia el objetivo principal sin marcadores adicionales.", ejemplo: "Colocado en el centro del mapa como objetivo principal. Su tamaño lo hace visible desde cualquier punto, guiando a los jugadores instintivamente hacia él.", props: ["Escala", "Texto / audio al activar", "Canal de salida", "Efecto visual al activar"] },
+    { id: "planta_sorbete", nombre: "Planta de Sorbete", icono: "default_icon", corta: "Flora consumible que otorga regeneración de escudo al recolectarla.", completa: "El jugador interactúa con la planta para recoger el fruto y recibir regeneración de escudo. Desaparece al recolectarse y reaparece tras un tiempo configurable. Funciona como recurso de curación ambiental que incentiva la exploración.", ejemplo: "Plantas dispersas en zonas alejadas del spawn. Los jugadores deben explorar el mapa para encontrar escudo en lugar de concentrarse en un punto.", props: ["Escudo otorgado", "Tiempo de reaparición", "Canal al ser recolectada"] },
+    { id: "torreta_automatica", nombre: "Torreta Automática", icono: "default_icon", corta: "Defensa estática con IA que detecta y dispara al equipo contrario.", completa: "Estructura defensiva con sensor que dispara automáticamente a jugadores del equipo configurado como enemigo. Configurable en rango, cadencia, HP y equipo objetivo. Se activa y desactiva por canal. Puede ser destruida por los jugadores.", ejemplo: "Torretas en los flancos de una base. Al iniciar el asalto el defensor las activa. Los atacantes deben destruirlas o flanquearlas para avanzar.", props: ["Rango de detección", "Cadencia de fuego", "Daño por disparo", "HP", "Equipo objetivo", "Canal de activar / desactivar"] },
+    { id: "volumen_fuego", nombre: "Volumen del Fuego", icono: "default_icon", corta: "Zona con llamas activas que dañan y aplican efecto de quemado.", completa: "Área 3D con efectos visuales de fuego que dañan a los jugadores dentro y aplican quemado (daño continuo tras salir). A diferencia del Volumen de Daño invisible, este tiene llamas visibles. Activable y desactivable por canal.", ejemplo: "Un muro de fuego bloquea un pasillo. El jugador debe encontrar la válvula (canal de desactivación) para apagarlo y avanzar.", props: ["Daño por segundo", "Duración del quemado al salir", "Canal de activar / desactivar"] },
+    { id: "sky_dome", nombre: "Sky Dome", icono: "sky_dome", corta: "Controla el cielo visual de la isla: nubes, estrellas, lluvia, aurora.", completa: "Define la apariencia del cielo completo: tipo de nubes, estrellas, aurora boreal, niebla, lluvia y relámpagos. Se sincroniza con el Secuenciador del Día. Múltiples presets disponibles o personalización completa de cada parámetro por zona o evento.", ejemplo: "Presets distintos por zona: cielo despejado en la ciudad, nubes tormentosas sobre las ruinas, niebla densa en el pantano.", props: ["Preset de cielo", "Densidad de nubes", "Fenómenos activos", "Canal de cambiar preset"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/sky-dome-device-in-fortnite" },
+    { id: "storm_controller", nombre: "Storm Controller", icono: "storm_controller", corta: "Gestiona la tormenta Battle Royale: posición, radio y velocidad de cierre.", completa: "Dispositivo central de modos BR personalizados. Controla fases de tormenta: radio inicial y final, velocidad de cierre, posición del centro y daño fuera del círculo. Programable en múltiples fases o controlable manualmente por canal.", ejemplo: "4 fases de tormenta con radios decrecientes. La cuarta cierra en una zona de 50m para forzar el combate final entre los supervivientes.", props: ["Fases de tormenta", "Radio por fase", "Tiempo entre fases", "Daño fuera del círculo"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/storm-controller-device-in-fortnite" },
+    { id: "mutator_zone", nombre: "Mutator Zone", icono: "mutator_zone", corta: "Zona que modifica reglas localmente: gravedad, velocidad, daño, construcción.", completa: "Área 3D que altera reglas del juego para los jugadores dentro: velocidad, daño, gravedad, materiales de construcción, armas habilitadas. Los efectos son inmediatos al entrar y se revierten al salir. Activable por canal.", ejemplo: "Una zona de gravedad reducida sobre una plataforma: los jugadores flotan y los proyectiles viajan más despacio, creando un área de combate con física alterada.", props: ["Modificador aplicado", "Valor", "Equipo afectado", "Canal de activar / desactivar"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/mutator-zone-device-in-fortnite" },
+    { id: "post_process_zone", nombre: "Post Process Zone", icono: "post_process_zone", corta: "Zona localizada con efectos de imagen solo para jugadores dentro del área.", completa: "A diferencia del Dispositivo de Posprocesado global, esta zona aplica efectos de imagen solo dentro del volumen. Al entrar la imagen cambia; al salir vuelve al estado previo. Crea transiciones visuales claras entre zonas sin afectar el resto del mapa.", ejemplo: "En la entrada de una zona irradiada, tinte verde y viñeta fuerte. El jugador siente el cambio ambiental desde que cruza el umbral invisible.", props: ["Efectos de imagen", "Intensidad", "Fade al entrar / salir", "Canal de activación"] },
+  ],
+  "Física": [
+    { id: "bumper_pinball", nombre: "Bumper de Pinball", icono: "default_icon", corta: "Repele físicamente a jugadores y objetos al contacto con impulso configurable.", completa: "Al ser tocado por un jugador, pelota u objeto físico, aplica un impulso de repulsión. Puede ser omnidireccional o con dirección fija. Fundamental para crear pinballs, obstáculos rebotantes y mecánicas de impulso.", ejemplo: "En un mapa de pinball, los bumpers cambian la dirección de la pelota al golpearlos y cada impacto emite por canal 'punto_sumado' al Rastreador.", props: ["Fuerza de repulsión", "Dirección (omnidireccional / fija)", "Canal al ser golpeado"] },
+    { id: "generador_bolas", nombre: "Generador de Bolas", icono: "default_icon", corta: "Spawnea esferas con física real que ruedan, rebotan e interactúan con el entorno.", completa: "Crea pelotas físicas que responden a gravedad, ruedan por superficies, rebotan en objetos y pueden empujar jugadores. Tamaño, masa, elasticidad y velocidad inicial son configurables. Compatible con Bumpers y Lanzadores de Pinball.", ejemplo: "Genera una pelota por canal al iniciar cada ronda del pinball. La pelota interactúa con todos los Bumpers y el Lanzador hasta caer por el foso.", props: ["Tamaño / masa", "Elasticidad", "Velocidad inicial", "Dirección de lanzamiento", "Canal de activación"] },
+    { id: "lanzador_pinball", nombre: "Lanzador de Pinball", icono: "launch_pad", corta: "Plunger de pinball que lanza la pelota con fuerza proporcional a la carga.", completa: "Simula el resorte lanzador clásico. El jugador o un canal carga la tensión y suelta, lanzando la pelota con fuerza proporcional al tiempo de carga. Compatible con pelotas del Generador de Bolas y cualquier objeto físico cercano.", ejemplo: "Al inicio de cada ronda, el canal 'iniciar_ronda' activa el Lanzador con fuerza máxima enviando la pelota al campo. Perder la pelota activa el canal de ronda terminada.", props: ["Fuerza máxima", "Dirección de lanzamiento", "Carga manual / automática", "Canal de activación"] },
+    { id: "roca_fisica", nombre: "Roca Física", icono: "default_icon", corta: "Roca con masa real que rueda, cae por pendientes y aplasta jugadores.", completa: "Prop de roca con simulación física activa: responde a gravedad, es empujada por explosiones, rueda por rampas y aplasta jugadores al caer sobre ellos. Masa y escala configurables. Crea obstáculos dinámicos y trampas de física convincentes.", ejemplo: "Una roca grande sostenida por una estructura destructible. Cuando el jugador la destruye, la roca rueda hacia abajo aplastando todo a su paso.", props: ["Masa", "Escala", "Daño al aplastar", "Canal al ser movida"] },
+    { id: "arbol_fisico", nombre: "Árbol Físico", icono: "default_icon", corta: "Árbol destructible que cae con física real al recibir suficiente daño.", completa: "Tronco con HP que reacciona al daño: al recibir suficiente, se quiebra y cae con física completa. La dirección de caída depende del lado golpeado. Al caer puede dañar jugadores, destruir estructuras y emitir por canal.", ejemplo: "En un mapa de tala, el objetivo es derribar árboles hacia una zona marcada. El jugador debe calcular el ángulo de golpe para dirigir la caída correctamente.", props: ["HP del tronco", "Masa al caer", "Daño al caer sobre jugadores", "Canal al ser derribado"] },
+  ],
+  "Elemento": [
+    { id: "aguja_puntiaguda", nombre: "Aguja Puntiaguda", icono: "default_icon", corta: "Prop punzante decorativo o trampa de daño por contacto directo.", completa: "Objeto en forma de aguja o punta que puede ser decoración estática o trampa activa. Al configurarse como trampa, inflige daño al jugador que lo toca. Puede emerger del suelo o descender del techo activado por canal.", ejemplo: "En un pasillo de deathrun, agujas emergen del suelo activadas por un Activador de Pulsos alternando posiciones, forzando al jugador a moverse constantemente.", props: ["Daño al contacto", "Activación (constante / canal)", "Canal de activar / retraer"] },
+    { id: "colocador_objetos", nombre: "Colocador de Objetos", icono: "item_placer", corta: "Instancia un objeto específico en una posición fija al activarse por canal.", completa: "Crea exactamente el mismo objeto predefinido cada vez que se activa. A diferencia del Generador de Objetos (loot table variable), el Colocador es preciso y predecible. Ideal para construcción por fases y puzzles con objetos en posiciones exactas.", ejemplo: "En un mapa de construcción por fases, cada objetivo completado activa un Colocador que instancia la siguiente pieza del edificio en su posición correcta.", props: ["Objeto específico", "Canal de activación", "Canal de destruir el objeto", "Tiempo de reaparición"] },
+    { id: "eliminador_objetos", nombre: "Eliminador de Objetos", icono: "item_remover", corta: "Elimina ítems del suelo o del inventario del jugador al activarse.", completa: "Remueve objetos físicos del entorno o del inventario del jugador. Puede apuntar a un ítem específico o a todos los de un tipo. Fundamental para limpiar el mapa entre rondas y crear sistemas de consumo de recursos.", ejemplo: "Al iniciar cada nueva ronda, el canal 'nueva_ronda' activa el Eliminador para limpiar todos los ítems del suelo sin necesidad de reiniciar la partida.", props: ["Objetivo (suelo / inventario)", "Ítem específico o todos", "Equipo afectado", "Canal de activación"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/item-remover-device-in-fortnite" },
+    { id: "espada_roca", nombre: "Espada en la Roca", icono: "default_icon", corta: "Solo puede ser extraída si el jugador cumple la condición configurada.", completa: "Prop artúrico con lógica incorporada: el jugador intenta extraer la espada y solo lo logra si cumple la condición (estadística, ítem, equipo). Si tiene éxito recibe el arma y emite por canal de éxito. Si falla, emite por canal de fallo.", ejemplo: "Solo el jugador con más puntos puede extraer la espada. Al lograrlo recibe el arma y se activa la fase final del mapa.", props: ["Condición de extracción", "Arma otorgada", "Canal de éxito / fallo"] },
+    { id: "espiritu_tierra", nombre: "Espíritu de Tierra", icono: "default_icon", corta: "Mini-jefe elemental de tierra con ataques de suelo y erupciones de roca.", completa: "Enemigo elemental temático con comportamiento propio: ataca con golpes que generan erupciones de suelo y proyectiles de roca. HP, daño y loot configurable. Al morir emite por canal.", ejemplo: "Al final de una mazmorra de tierra, el Espíritu actúa como jefe final. Sus ataques crean zonas de daño en el suelo que obligan a los jugadores a moverse.", props: ["HP", "Daño de ataques", "Loot al morir", "Canal al ser derrotado"] },
+    { id: "generador_objetos", nombre: "Generador de Objetos", icono: "item_spawner", corta: "Spawna ítems de una loot table configurable en posiciones del mapa.", completa: "Crea ítems físicos en el mundo según una tabla de loot con probabilidades configurables. Puede spawnar al inicio, periódicamente o por canal. Controla cantidad máxima simultánea y tiempo de reaparición.", ejemplo: "10 generadores por el mapa con loot tables distintas. Los del centro tienen armas de alta rareza; los del borde tienen recursos básicos, creando un pull hacia el centro.", props: ["Tabla de loot", "Cantidad máxima", "Tiempo de reaparición", "Canal de activación"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/item-spawner-device-in-fortnite" },
+    { id: "generador_objetos_captura", nombre: "Generador de Objetos de Captura", icono: "item_spawner", corta: "Crea el objeto transportable central de modos captura la bandera o entrega.", completa: "Spawnea un objeto que puede ser recogido y transportado por el jugador. Al llevarlo a la Zona de Captura se completa el objetivo. Si el portador muere, el objeto cae al suelo en esa posición.", ejemplo: "En un modo CTF, el Generador crea la bandera en la base enemiga. Llevarla a tu Zona de Captura suma un punto al marcador.", props: ["Apariencia del objeto", "Zona de captura vinculada", "Canal al recoger / soltar / capturar"] },
+    { id: "generador_transportable", nombre: "Generador de Transportable", icono: "item_spawner", corta: "Spawnea un objeto voluminoso que debe ser empujado o arrastrado al destino.", completa: "Para objetos que no caben en el inventario: se empujan, arrastran o cargan a hombros. Tienen física y pueden ser frenados por obstáculos. Peso y velocidad de movimiento configurables.", ejemplo: "En un mapa cooperativo, los jugadores deben empujar una carga pesada desde el inicio hasta el final. El terreno irregular y los enemigos dificultan el transporte.", props: ["Masa del objeto", "Velocidad máxima al mover", "Canal al llegar al destino"] },
+    { id: "maquina_expendedora", nombre: "Máquina Expendedora", icono: "item_granter", corta: "Tienda interactiva que vende ítems a cambio de oro del jugador.", completa: "Punto de venta donde el jugador compra ítems configurados a cambio de oro. Cada slot tiene precio, stock y reposición configurables. Se activa y desactiva por canal. Crea economía interna en el mapa sin Verse.", ejemplo: "La máquina del centro vende armas potentes a precio alto; las del borde venden consumibles baratos para que todos accedan al sistema económico.", props: ["Ítems y precios", "Stock por ítem", "Reposición", "Canal de activar / desactivar"] },
+    { id: "repartidor_objetos", nombre: "Repartidor de Objetos", icono: "item_granter", corta: "Entrega ítems directamente al inventario de jugadores sin interacción.", completa: "A diferencia de la Máquina Expendedora (requiere compra) o el Generador (crea en el suelo), el Repartidor añade ítems directamente al inventario. Se activa por canal y puede apuntar a jugadores específicos, equipos o todos.", ejemplo: "Al iniciar cada ronda en un mapa de arena, el Repartidor da a todos los jugadores exactamente el mismo loadout simultáneamente.", props: ["Ítem a entregar", "Cantidad", "Destinatario (todos / equipo / jugador)", "Canal de activación"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/item-granter-device-in-fortnite" },
+  ],
+  "Modo": [
+    { id: "baliza_controlador_tormenta", nombre: "Baliza del Controlador de Tormenta", icono: "default_icon", corta: "Marca visualmente en el mapa el área del próximo círculo seguro.", completa: "Indica en el minimapa y en el mundo 3D dónde se posicionará el siguiente círculo de la tormenta. Trabaja junto al Storm Controller para comunicar la mecánica de cierre. Configurable en radio, color y visibilidad.", ejemplo: "La baliza muestra el futuro círculo 30 segundos antes de que la tormenta empiece a moverse, dando tiempo a los jugadores para reposicionarse.", props: ["Radio de referencia", "Color", "Anticipación visual (segundos antes)"] },
+    { id: "carton_decrepito", nombre: "Cartón Decrépito", icono: "default_icon", corta: "Cobertura frágil con HP muy bajo: útil un momento, se destruye rápido.", completa: "Objeto de cobertura con muy poco HP. Permite esconderse brevemente pero se destruye bajo fuego sostenido. Crea coberturas de valor limitado que fuerzan al jugador a moverse en lugar de campear.", ejemplo: "Cartones dispersos en un mapa urbano. Los jugadores los usan de cobertura temporal, pero deben seguir moviéndose porque ninguna cobertura dura.", props: ["HP", "Loot al destruir"] },
+    { id: "casillas_color", nombre: "Casillas que Cambian de Color", icono: "default_icon", corta: "Tiles que cambian de color por canal: base de juegos tipo 'suelo es lava'.", completa: "Plataformas que cambian entre colores configurables al recibir señales. Permiten crear minijuegos donde el jugador debe pararse en el color correcto o evitar el peligroso. El cambio puede sincronizarse con el Activador de Pulsos para patrones rítmicos.", ejemplo: "El Activador de Pulsos emite señales aleatorias. Cada señal cambia todas las casillas: el jugador que esté en la casilla 'roja' recibe daño y es eliminado.", props: ["Colores disponibles", "Canal de cambio por color", "Velocidad de transición"] },
+    { id: "controlador_tormenta_avanzado", nombre: "Controlador de Tormenta Avanzado", icono: "storm_controller", corta: "Control total de la tormenta: posición manual, formas irregulares y scripting.", completa: "Versión extendida del Controlador Básico: formas no circulares, posición manual del centro, scripting de fases complejas y mayor integración con canales. Para creadores que necesitan control milimétrico de la mecánica de tormenta.", ejemplo: "Una tormenta con forma de triángulo que se cierra asimétricamente, empujando a los jugadores hacia un corredor específico para el encuentro final.", props: ["Posición manual del centro", "Forma del área segura", "Fases programables", "Canales por fase"] },
+    { id: "controlador_tormenta_basico", nombre: "Controlador de Tormenta Básico", icono: "storm_controller", corta: "Implementa la mecánica de tormenta BR de forma rápida con valores predefinidos.", completa: "Versión simplificada: radio inicial, fases automáticas y daño fuera del círculo configurables con presets. Ideal para primeras experiencias con la mecánica BR o mapas donde la tormenta es secundaria.", ejemplo: "Para un mapa BR casual, 3 fases automáticas y daño de 1 HP/s fuera del círculo. La mecánica funciona sin configuración adicional.", props: ["Radio inicial", "Número de fases", "Daño por segundo fuera del círculo", "Tiempo entre fases"] },
+    { id: "furgoneta_reinicio", nombre: "Furgoneta de Reinicio", icono: "default_icon", corta: "Aparece en el mapa periódicamente y permite revivir compañeros eliminados.", completa: "Implementa la mecánica nativa de Fortnite en modos personalizados. Aparece con animación en puntos configurados, permanece un tiempo limitado y permite a jugadores vivos revivir compañeros. Posición, intervalo y duración son configurables.", ejemplo: "En un modo squad, furgonetas aparecen en 3 puntos del mapa cada 2 minutos. Los jugadores deciden si arriesgan ir a revivir al compañero.", props: ["Posición de aparición", "Intervalo de aparición", "Duración disponible", "Canal al activarse / usarse"] },
+    { id: "gestor_carreras", nombre: "Gestor de Carreras", icono: "default_icon", corta: "Coordina la lógica completa de una carrera: orden, tiempos y clasificación.", completa: "Gestiona el modo de carreras: registra el orden de llegada, tiempos por vuelta, detecta atajos no válidos y muestra clasificación en tiempo real. Trabaja junto a los Puntos de Control de Carrera.", ejemplo: "Coloca el Gestor y 6 Puntos de Control en el circuito. El gestor detecta automáticamente el orden de paso, calcula tiempos y muestra el ranking en HUD.", props: ["Número de vueltas", "Canal al terminar la carrera", "Mostrar tiempos en HUD"] },
+    { id: "gestor_eliminaciones", nombre: "Gestor de Eliminaciones", icono: "elimination_manager", corta: "Registra eventos de eliminación y los convierte en señales de canal.", completa: "Centraliza todos los eventos de eliminación. Emite por canal al producirse cada kill, discrimina por equipo, detecta eventos especiales (primera eliminación, último jugador) y se comunica con el Gestor de Puntuación.", ejemplo: "Conecta el Gestor al Gestor de Puntuación (+1 por kill). Al registrar 25 eliminaciones emite 'equipo_gana' al Dispositivo de Fin de Partida.", props: ["Equipo observado", "Canal por eliminación", "Canal al primer kill", "Canal al último jugador"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/elimination-manager-device-in-fortnite" },
+    { id: "jefe_elemental", nombre: "Jefe del Elemental", icono: "default_icon", corta: "Boss con fases de combate, ataques elementales y spawn de refuerzos.", completa: "Enemigo jefe de alto HP con comportamiento en fases: al llegar a umbrales de HP cambia de patrón, añade ataques o invoca refuerzos. Elemento (fuego, hielo, rayo), parámetros y loot al morir son configurables.", ejemplo: "Jefe de Fuego con 3 fases: a 75% invoca criaturas, a 50% añade ataques de área, a 25% entra en modo furia con ataques constantes.", props: ["Elemento", "HP y umbrales de fase", "Loot al morir", "Canal al cambiar fase / morir"] },
+    { id: "objetivo", nombre: "Objetivo", icono: "default_icon", corta: "Tarea concreta para el jugador con progreso visible en HUD.", completa: "Define una misión: llegar a un punto, eliminar enemigos, sobrevivir X segundos, recoger objetos. Muestra el progreso en HUD. Al completarse emite por canal. Compatible con el Rastreador y el Objetivo Cronometrado.", ejemplo: "3 Objetivos en paralelo: 'Elimina 5 guardias', 'Recoge 3 cristales', 'Activa el generador'. Al completar los 3, 'todos_completados' activa la fase final.", props: ["Tipo de objetivo", "Cantidad requerida", "Mostrar en HUD", "Canal al completar / fallar"] },
+    { id: "objeto_coleccionable", nombre: "Objeto Coleccionable", icono: "item_spawner", corta: "Ítem que desaparece al recogerlo y suma al contador vinculado.", completa: "Al ser recogido suma al contador o estadística vinculada sin ocupar inventario. Ideal para monedas, fichas, notas, fragmentos. Compatible con el Rastreador para condición de victoria.", ejemplo: "20 monedas dispersas por el mapa. El jugador con más monedas al terminar el tiempo gana. El Objeto Coleccionable está vinculado al Rastreador y este al Leaderboard.", props: ["Apariencia", "Valor al recoger", "Estadística vinculada", "Reaparición", "Canal al ser recogido"] },
+    { id: "punto_control_carrera", nombre: "Punto de Control de Carrera", icono: "default_icon", corta: "Gate de paso obligatorio y secuencial en un circuito de carreras.", completa: "Portal de checkpoint que el jugador debe cruzar en orden secuencial. Registra el tiempo de paso, valida la secuencia correcta (no se puede saltear) y comunica el progreso al Gestor de Carreras.", ejemplo: "8 checkpoints en un circuito de karts. Si el jugador los cruza en orden, el gestor registra la vuelta como válida. Saltear uno invalida la vuelta.", props: ["Número de orden", "Visible / invisible", "Canal al cruzar en orden", "Canal al cruzar fuera de orden"] },
+    { id: "zona_captura", nombre: "Zona de Captura", icono: "capture_area", corta: "Punto de control que los equipos deben mantener ocupado para ganar puntos.", completa: "Área que los equipos deben controlar físicamente. El tiempo para capturar, el equipo actual y los canales de inicio y fin son configurables. Compatible con barras de progreso en HUD. Base de los modos King of the Hill y Dominación.", ejemplo: "3 zonas en el mapa. Cada zona capturada suma 1 punto por segundo al Gestor de Puntuación del equipo que la controla. El primero en llegar a 100 gana.", props: ["Tiempo de captura", "Canal al iniciar / completar captura", "Barra de progreso en HUD", "Equipo poseedor"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/capture-area-device-in-fortnite" },
+  ],
+  "Transversal": [
+    { id: "aro_nitro", nombre: "Aro de Nitro", icono: "default_icon", corta: "Portal de boost que acelera al vehículo o jugador que lo atraviesa.", completa: "Aplica un impulso de velocidad configurable al cruzarlo. Compatible con vehículos de Fortnite y jugadores a pie. Se pueden encadenar en secuencia para crear secciones de velocidad máxima en pistas de carreras.", ejemplo: "En un circuito de karts, los aros de nitro en las rectas largas recompensan la buena trayectoria. El que pasa por más aros llega con ventaja al final.", props: ["Impulso de velocidad (%)", "Duración del boost", "Compatible con (vehículo / jugador / ambos)", "Canal al ser cruzado"] },
+    { id: "barra_desplazamiento", nombre: "Barra de Desplazamiento", icono: "default_icon", corta: "Slider de UI para que el jugador seleccione un valor dentro de un rango.", completa: "Elemento de interfaz deslizante con rango mínimo-máximo configurable. El jugador interactúa para seleccionar un valor que puede usarse para configurar otros dispositivos. Útil para opciones de dificultad, tiempo de partida y personalización de sala.", ejemplo: "En el lobby, barras de dificultad (1-10), tiempo de partida y cantidad de vidas que los jugadores ajustan antes de iniciar.", props: ["Rango mínimo / máximo", "Valor inicial", "Paso del slider", "Canal al cambiar valor"] },
+    { id: "elevador", nombre: "Elevador", icono: "launch_pad", corta: "Plataforma que sube o baja entre dos puntos al activarse.", completa: "Plataforma de transporte vertical que se mueve entre posición inferior y superior por canal o interacción del jugador. Configurable en velocidad, distancia y modo (automático, manual). Esencial en mapas de múltiples pisos.", ejemplo: "En una base de 3 pisos, el elevador central sube y baja entre niveles. El jugador pulsa el botón del piso destino y el elevador lleva hasta allí.", props: ["Distancia de recorrido", "Velocidad", "Modo (automático / manual)", "Canal de subir / bajar"] },
+    { id: "generador_cochinillas", nombre: "Generador de Cochinillas", icono: "creature_spawner", corta: "Spawnea cochinillas decorativas que deambulan por las superficies.", completa: "Genera insectos pequeños sin comportamiento de combate ni interacción. Puramente ambiental: añade vida a zonas húmedas, sótanos y ruinas. Sin impacto en el rendimiento de IA.", ejemplo: "En una mazmorra subterránea, cochinillas en los rincones húmedos crean sensación de abandono y decadencia sin usar IAs completas.", props: ["Cantidad máxima", "Radio de deambulación"] },
+    { id: "lanzador_direccional", nombre: "Lanzador Direccional", icono: "launch_pad", corta: "Lanza al jugador en cualquier dirección con fuerza y ángulo precisos.", completa: "A diferencia del Launch Pad (siempre hacia arriba), este apunta en cualquier dirección: lateral, diagonal, hacia abajo. Dirección y fuerza configurables con precisión. Ideal para cañones humanos, secciones de vuelo horizontal y traversal único.", ejemplo: "En un parkour, el Lanzador Direccional apunta diagonalmente hacia una plataforma distante. El jugador salta y es propulsado en arco hacia el siguiente punto.", props: ["Dirección (X, Y, Z)", "Fuerza del lanzamiento", "Abrir paracaídas (sí/no)", "Canal de activación"] },
+    { id: "modulador_movimiento", nombre: "Modulador de Movimiento", icono: "mutator_zone", corta: "Zona que altera velocidad, salto, gravedad o flotación del jugador.", completa: "Zona 3D especializada en parámetros de movimiento: velocidad de carrera, altura de salto, gravedad, planeo y adhesión. Más específico que la Zona de Mutación general. Crea áreas de movimiento único sin afectar otras reglas.", ejemplo: "Un área de gravedad reducida donde los jugadores saltan el doble de alto y caen lento, perfecto para plataformers con mecánica de luna.", props: ["Modificador de velocidad", "Modificador de salto", "Modificador de gravedad", "Flotación / planeo", "Canal de activación"] },
+    { id: "plataforma_impacto", nombre: "Plataforma de Impacto", icono: "launch_pad", corta: "Superficie elástica que rebota al jugador hacia arriba al aterrizar.", completa: "Aplica un impulso vertical al jugador cuando aterriza sobre ella. La elasticidad (% de la caída convertida en rebote) y el impulso adicional son configurables. Ideal para mecánicas de rebote y recuperación en deathruns.", ejemplo: "Bajo trampas de caída en un deathrun, las plataformas de impacto rebotan al jugador automáticamente para que pueda continuar sin volver al inicio.", props: ["Elasticidad (%)", "Impulso adicional", "Dirección del rebote", "Canal al ser golpeada"] },
+    { id: "plataforma_flotante", nombre: "Plataforma Flotante", icono: "default_icon", corta: "Plataforma que se mueve entre waypoints en una ruta programada.", completa: "Superficie sólida con movimiento entre múltiples puntos en el espacio. Configurable en velocidad, tipo de trayectoria (lineal, curva), tiempo de espera en cada punto y activación. Los jugadores se paran sobre ella y son transportados.", ejemplo: "Plataformas flotantes que se mueven horizontal y verticalmente en un mapa de plataformas. El jugador cronometra sus saltos para subir nivel a nivel.", props: ["Ruta de waypoints", "Velocidad", "Tiempo de espera por punto", "Loop / ida y vuelta", "Canal de activación"] },
+    { id: "tirolina", nombre: "Tirolina", icono: "default_icon", corta: "Cable entre dos puntos por el que el jugador se desliza al agarrarse.", completa: "Crea un cable entre dos posiciones. Al acercarse al punto de inicio aparece el prompt; al agarrarse, el jugador desliza hasta el extremo. Velocidad, si se puede soltar a mitad y bidireccionalidad son configurables.", ejemplo: "En un mapa de montaña, tirolinas conectan picos con el valle. Los jugadores bajan rápidamente o las usan para cruzar abismos sin tener que escalar de vuelta.", props: ["Velocidad de deslizamiento", "Bidireccional (sí/no)", "Soltar a mitad (sí/no)", "Canal al terminar recorrido"] },
+    { id: "ventilacion", nombre: "Ventilación", icono: "default_icon", corta: "Salida de aire que propulsa al jugador hacia arriba al pararse sobre ella.", completa: "Flujo de aire activo que aplica impulso vertical configurable al jugador que lo cruza. Se activa y desactiva por canal. Puede ser cobertura oculta bajo una rejilla, ascensor de emergencia o trampa que lanza a los jugadores a zonas peligrosas.", ejemplo: "Ventilaciones ocultas bajo rejillas del suelo en un mapa de infiltración. Los jugadores que las descubren pueden subir pisos silenciosamente sin usar escaleras.", props: ["Fuerza del impulso", "Activa continua / puntual", "Canal de activar / desactivar"] },
+    { id: "volumen_paracaidas", nombre: "Volumen del Paracaídas", icono: "default_icon", corta: "Zona donde el paracaídas se despliega automáticamente al entrar en caída.", completa: "Volumen 3D donde cualquier jugador en caída libre despliega el paracaídas automáticamente. Útil para zonas de caída segura, entradas al mapa desde altura y para forzar aterrizajes lentos en zonas específicas.", ejemplo: "En un mapa con caída inicial desde gran altura, el volumen a mitad de la caída fuerza el paracaídas para que todos aterricen en la zona de inicio.", props: ["Dimensiones del volumen", "Canal de activar / desactivar"] },
+  ],
+  "!Beta": [
+    { id: "camara_primera_persona", nombre: "Cámara en Primera Persona", icono: "default_icon", corta: "⚠️ Beta — Vista FPS: el jugador ve desde los ojos de su personaje.", completa: "Cambia la cámara a perspectiva de primera persona: sin ver el propio cuerpo, solo desde la perspectiva de los ojos. Elimina la ventaja visual de la tercera persona. En Beta: puede tener limitaciones con algunas mecánicas de Fortnite.", ejemplo: "En un mapa de horror de pasillo, la primera persona amplifica la tensión al eliminar la visibilidad periférica. Solo ves lo que está directamente frente a ti.", props: ["FOV (campo de visión)", "Canal de activación", "⚠️ Estado: Beta"] },
+    { id: "dispositivo_movimiento_jugador", nombre: "Dispositivo de Movimiento del Jugador", icono: "default_icon", corta: "⚠️ Beta — Control avanzado de velocidad, salto y físicas del jugador.", completa: "Modifica en detalle los parámetros base del movimiento: velocidad máxima, aceleración, altura de salto, número de saltos, velocidad de escalada. A diferencia del Modulador de Movimiento (por zona), este aplica globalmente o a jugadores específicos. En Beta: puede tener inconsistencias.", ejemplo: "En un parkour de alta habilidad, duplica la velocidad y permite triple salto para crear un gameplay veloz y preciso que difiere del Fortnite estándar.", props: ["Velocidad máxima", "Altura de salto", "Número de saltos", "Aceleración", "⚠️ Estado: Beta"] },
+    { id: "generador_pnj", nombre: "Generador de PNJ", icono: "guard_spawner", corta: "⚠️ Beta — Crea NPCs amistosos con diálogos y misiones asignables.", completa: "Genera personajes no jugadores orientados a interacción social y narrativa (no combate). Con skin, diálogos configurables y sistema de misiones. El sistema de misiones permite asignarles tareas que el jugador completa. En Beta: funcionalidades de misión en desarrollo activo.", ejemplo: "Un NPC mercader en la aldea inicial con diálogos de bienvenida. Al hablar aparecen opciones de misión; al aceptar, el NPC trackea el progreso del jugador.", props: ["Skin del NPC", "Diálogos asignados", "Misión vinculada", "Canal al interactuar", "⚠️ Estado: Beta"] },
+  ],
+  "Sistema": [
+    { id: "ajustes_equipo_inventario", nombre: "Ajustes de Equipo e Inventario", icono: "team_settings", corta: "Configura inventario inicial, equipamiento y restricciones de todos los jugadores.", completa: "Define el estado del inventario al inicio: armas equipadas por defecto, materiales, consumibles, límite de slots y si se permite recoger ítems del suelo. También gestiona restricciones de equipo. Es la configuración base de cualquier mapa.", ejemplo: "En un mapa de espadachín, todos los jugadores empiezan sin armas de fuego, solo con espadas, y la recogida de armas de fuego está desactivada.", props: ["Inventario inicial", "Armas permitidas / restringidas", "Materiales iniciales", "Recoger ítems (sí/no)"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/team-settings-and-inventory-device-in-fortnite" },
+    { id: "ajustes_ronda", nombre: "Ajustes de la Ronda", icono: "default_icon", corta: "Define duración, condición de victoria y transición entre rondas.", completa: "Gestiona la estructura de rondas: duración, número total, condición de victoria por ronda, tiempo de transición y qué se resetea al iniciar una nueva. Componente central de modos multi-ronda.", ejemplo: "En un modo de boxeo de 3 rondas: 2 minutos por ronda, victoria por primera eliminación y 15 segundos de descanso entre rondas.", props: ["Duración de la ronda", "Número de rondas", "Condición de victoria", "Tiempo entre rondas", "Resetear inventario entre rondas"] },
+    { id: "analisis", nombre: "Análisis", icono: "analytics", corta: "Registra métricas de comportamiento del jugador para análisis post-partida.", completa: "Telemetría que registra eventos y métricas: posiciones de muertes, uso de cada zona, tiempo en puntos de interés, ítems más recogidos. Los datos se visualizan en el panel de análisis de UEFN. Fundamental para iterar el diseño basándose en datos reales.", ejemplo: "Un evento de Análisis en cada zona del mapa registra cuánto tiempo pasan los jugadores en cada área. Si una zona tiene 0 visitas, replantear su diseño o accesibilidad.", props: ["Nombre del evento", "Datos registrados", "Frecuencia de muestreo"] },
+    { id: "contador_jugadores", nombre: "Contador de Jugadores", icono: "counter", corta: "Monitorea cuántos jugadores están vivos, en un equipo o dentro de una zona.", completa: "Rastrea la cantidad de jugadores activos con scope configurable: todos, un equipo, o dentro de un volumen. Puede mostrar el contador en HUD y emitir señales al alcanzar umbrales. Fundamental para lógica de final en modos battle royale y eliminación.", ejemplo: "Monitorea el equipo atacante. Al llegar a 0 emite 'atacantes_eliminados' para declarar victoria defensora.", props: ["Scope (todos / equipo / zona)", "Mostrar en HUD", "Umbral de activación", "Canal al alcanzar umbral"] },
+    { id: "creador_efectos_visuales", nombre: "Creador de Efectos Visuales", icono: "default_icon", corta: "Define efectos de partículas personalizados reutilizables en todo el mapa.", completa: "Herramienta de creación de sistemas de partículas: chispas, humo, explosiones, magia, vapor. Cada parámetro (tamaño, velocidad, color, tasa de emisión) es editable. Los efectos creados se instancian con el Generador de Efectos Visuales en cualquier punto del mapa.", ejemplo: "Diseña un efecto de 'portal mágico' con partículas azules giratorias. Luego instancialo en todas las puertas mágicas del mapa con el Generador.", props: ["Tipo de partículas", "Color", "Tamaño y velocidad", "Tasa de emisión", "Duración"] },
+    { id: "diseñador_clase", nombre: "Diseñador de Clase", icono: "class_selector", corta: "Define estadísticas, habilidades e inventario inicial de una clase de jugador.", completa: "Crea arquetipos de personaje con atributos específicos: HP base, velocidad, estadísticas personalizadas, inventario inicial y habilidades. Las clases se usan en el Selector de Clase. Permite sistemas RPG y hero shooters sin Verse.", ejemplo: "3 clases: 'Tanque' (alto HP, lento), 'Veloz' (bajo HP, muy rápido) y 'Soporte' (ítem de curación inicial). Los jugadores eligen al iniciar la partida.", props: ["HP base", "Velocidad base", "Inventario inicial", "Habilidades disponibles"] },
+    { id: "dispositivo_referencia_jugador", nombre: "Dispositivo de Referencia del Jugador", icono: "default_icon", corta: "Almacena una referencia a un jugador específico para lógica avanzada.", completa: "Crea una variable de referencia a un jugador (por número, equipo o último interactor) utilizable por Verse u otros dispositivos. Fundamental para lógica que apunta a jugadores específicos sin identificarlos manualmente.", ejemplo: "Guarda la referencia del jugador con más puntos al terminar la ronda. Úsala para otorgarle el bonus de MVP automáticamente.", props: ["Criterio de referencia", "Canal de capturar referencia"] },
+    { id: "dispositivo_secuencias_cinematicas", nombre: "Dispositivo de Secuencias Cinemáticas", icono: "cinematic", corta: "Reproduce una secuencia cinematográfica scripted con cámaras y animaciones.", completa: "Reproduce secuencias del Sequencer de UEFN: movimientos de cámara, animaciones de personajes, SFX sincronizados. Durante la cinemática el jugador pierde el control. Esencial para introducciones de mapas, escenas narrativas y presentaciones de jefes.", ejemplo: "Al entrar al mapa, una cinemática aérea de 15 segundos muestra el escenario con música dramática antes de devolver el control al jugador.", props: ["Secuencia vinculada", "Saltable (sí/no)", "Canal de activación", "Canal al terminar"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/cinematic-sequence-device-in-fortnite" },
+    { id: "generador_efectos_visuales", nombre: "Generador de Efectos Visuales", icono: "default_icon", corta: "Instancia un efecto de partículas en el mundo al activarse por canal.", completa: "Reproduce un efecto de partículas en su posición. Usa efectos del catálogo de UEFN o personalizados del Creador de Efectos Visuales. Configurable en escala, duración y modo (loop o disparo único). Se activa y detiene por canal.", ejemplo: "Un Generador de 'explosión de confeti' en la zona de victoria. Al recibir la señal de fin de partida, reproduce el efecto durante 5 segundos para todos.", props: ["Efecto de partículas", "Escala", "Loop / única vez", "Canal de activar / detener"] },
+    { id: "generador_jugadores", nombre: "Generador de Jugadores", icono: "player_spawner", corta: "Define el punto de aparición de los jugadores al inicio o al reaparecer.", completa: "Establece dónde aparecen los jugadores al comenzar o al respawnear. Configurable para equipos específicos, aleatoriedad entre varios spawns y condiciones de reaparición (HP al reaparecer, tiempo de espera).", ejemplo: "Un Generador por equipo en lados opuestos del mapa para spawn simétrico. En FFA, varios con spawn aleatorio evitan que los jugadores memoricen posiciones rivales.", props: ["Equipo asignado", "HP al aparecer", "Tiempo de reaparición", "Prioridad entre varios spawns"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/player-spawner-device-in-fortnite" },
+    { id: "gestor_puntuacion", nombre: "Gestor de Puntuación", icono: "score", corta: "Gestiona los puntos de equipos o jugadores y los muestra en HUD.", completa: "Dispositivo central de puntuación: recibe señales de otros dispositivos y suma/resta puntos. Muestra el marcador en HUD, emite por canal al alcanzar umbrales y sincroniza con el Leaderboard.", ejemplo: "Eliminaciones (+1), Zona de Captura (+5/segundo) y Objetivo (+10) conectados al Gestor. Al llegar a 100 puntos emite 'victoria' al Dispositivo de Fin de Partida.", props: ["Fuentes de puntos por canal", "Canal al alcanzar umbral", "Mostrar en HUD", "Sincronizar con Leaderboard"], docs: "https://dev.epicgames.com/documentation/en-us/uefn/score-manager-device-in-fortnite" },
+    { id: "ui_selector_clase", nombre: "IU de Selector de Clase", icono: "class_selector", corta: "Pantalla visual de selección de clase que se muestra al jugador.", completa: "Interfaz que presenta las clases creadas con el Diseñador de Clase. El jugador las ve con estadísticas, descripción e imagen y elige. Aparece al inicio o por canal. Compatible con restricciones por equipo y clase por defecto.", ejemplo: "Al iniciar la partida, la pantalla muestra las 3 clases con 30 segundos para elegir. Sin elección, se asigna la clase por defecto automáticamente.", props: ["Clases mostradas", "Tiempo límite", "Clase por defecto", "Canal de activación"] },
+    { id: "menciones", nombre: "Menciones", icono: "accolade", corta: "Reconocimientos post-partida: MVP, mejor eliminador, más útil.", completa: "Configura los reconocimientos de la pantalla de fin de partida con criterios personalizados. Incentiva estilos de juego más allá de ganar e introduce una capa de reconocimiento social.", ejemplo: "Menciones para: 'Francotirador Élite' (más headshots), 'Capturador' (más zonas tomadas) y 'Centurión' (más daño infligido).", props: ["Nombre de la mención", "Criterio de otorgamiento", "Ícono", "Canal al ser otorgada"] },
+    { id: "perfil_desarrollador", nombre: "Perfil de Desarrollador", icono: "default_icon", corta: "Muestra el nombre, logo y redes sociales del creador dentro del mapa.", completa: "Permite mostrar nombre, logo, redes y descripción del creador en el mapa. Puede aparecer al inicio, en una zona de créditos o siempre en el HUD. Construye marca personal y facilita a los jugadores encontrar más contenido del autor.", ejemplo: "En el lobby de espera, el logo del creador en una esquina. Al terminar la partida, los créditos muestran los links a sus redes.", props: ["Nombre del creador", "Logo / imagen", "Redes sociales", "Cuándo mostrar"] },
+    { id: "plataforma_punto_control_jugador", nombre: "Plataforma de Punto de Control del Jugador", icono: "default_icon", corta: "Checkpoint que cambia el punto de reaparición del jugador al activarse.", completa: "Al pisar este checkpoint, el punto de reaparición cambia a esa posición. Si el jugador muere, reaparece aquí en lugar del spawn inicial. Los checkpoints se resetean por canal. Fundamental en aventuras largas y deathruns.", ejemplo: "En un deathrun de 100 obstáculos, checkpoints cada 25 evitan perder todo el progreso al morir. El jugador continúa desde el último activado.", props: ["Reseteable (sí/no)", "Canal de activación", "Canal al ser activado", "HP al reaparecer"] },
+    { id: "portal_emparejamiento", nombre: "Portal de Emparejamiento", icono: "default_icon", corta: "Puerta que lleva a los jugadores a otra experiencia UEFN o modo de Fortnite.", completa: "Crea portales de salida hacia otras islas publicadas, al lobby o a modos específicos. El jugador interactúa y es teletransportado a la experiencia destino. Ideal para crear hubs de islas conectadas del mismo creador.", ejemplo: "En un hub de varias islas, portales hacia 'Deathrun', 'Zombie Survival' y 'Racing'. Los jugadores navegan entre mapas del creador sin salir a Fortnite.", props: ["Destino (isla / modo)", "Código de isla destino", "Texto del prompt", "Canal de activación"] },
+    { id: "punto_guardado", nombre: "Punto de Guardado", icono: "default_icon", corta: "Guarda el progreso del jugador para que persista entre sesiones.", completa: "Usa el sistema de persistencia de UEFN para guardar estadísticas, objetos y misiones completadas entre sesiones. Al volver al mapa, el jugador continúa donde lo dejó. Requiere que la isla tenga persistencia activada.", ejemplo: "En un RPG largo, guarda el nivel, equipamiento y objetivos completados. Al volver al día siguiente, el jugador encuentra su progreso intacto.", props: ["Datos a guardar", "Canal de guardar", "Canal de cargar al iniciar"] },
+    { id: "reproductor_video", nombre: "Reproductor de Vídeo", icono: "default_icon", corta: "Reproduce un vídeo en una pantalla física dentro del mapa.", completa: "Muestra contenido de vídeo en una superficie del mapa (televisión, pantalla de cine). Compatible con vídeos de la plataforma UEFN. Configurable en tamaño, loop y activación por canal. Inmersivo para tutoriales en vídeo y ambientación narrativa.", ejemplo: "En la sala de briefing de un mapa de espionaje, el vídeo de introducción se reproduce automáticamente al entrar los jugadores, explicando la misión.", props: ["Asset de vídeo", "Tamaño de pantalla", "Loop", "Canal de reproducir / pausar"] },
+    { id: "selector_clase", nombre: "Selector de Clase", icono: "class_selector", corta: "Asigna una clase al jugador por elección o condición en el backend.", completa: "Gestiona la asignación de clases: recibe la elección del jugador desde la IU o asigna automáticamente según condiciones (equipo, estadística, canal). Aplica las estadísticas e inventario de la clase. Trabaja junto al Diseñador de Clase y la IU.", ejemplo: "Al recibir 'clase_tanque_elegida', aplica automáticamente HP 300, velocidad -30% y escopeta de inicio al jugador correspondiente.", props: ["Clase a asignar", "Condición de asignación", "Canal de activación por clase"] },
+    { id: "vestidores", nombre: "Vestidores", icono: "default_icon", corta: "Área donde los jugadores pueden cambiar de skin durante la partida.", completa: "Zona interactiva para cambiar skin en mitad del juego. Puede tener skins específicas o permitir cualquier skin del jugador. Útil en mapas de rol, teatro y cualquier experiencia donde la identidad visual cambia durante la partida.", ejemplo: "En un mapa de teatro, los actores visitan el Vestidor entre actos para cambiarse según el personaje que interpretan en la siguiente escena.", props: ["Skins disponibles", "Restricción por equipo", "Canal al usarse"] },
+  ],
+};
+
+// ─── STATE ────────────────────────────────────────────────────
+let activeCat = "all";
+let searchQ = "";
+
+// ─── COUNT ALL DEVICES ────────────────────────────────────────
+const ALL_DEVICES = Object.values(DATA).flat();
+document.getElementById("countTotal").textContent = ALL_DEVICES.length;
+
+// Hub stats dinámicos
+const hubDevEl = document.getElementById("hubDevCount");
+const hubCatEl = document.getElementById("hubCatCount");
+if (hubDevEl) hubDevEl.textContent = ALL_DEVICES.length;
+if (hubCatEl) hubCatEl.textContent = Object.keys(DATA).length;
+
+// ─── BUILD FILTER CHIPS ───────────────────────────────────────
+function buildFilterBar() {
+  const bar = document.getElementById("filterBar");
+  const cats = Object.keys(DATA);
+
+  const allChip = document.createElement("button");
+  allChip.className = "chip on";
+  allChip.dataset.cat = "all";
+  allChip.innerHTML = `<span class="chip-dot" style="background:#f7b731"></span> Inicio`;
+  allChip.addEventListener("click", () => setFilter("all"));
+  bar.appendChild(allChip);
+
+  cats.forEach(cat => {
+    const c = getCat(cat);
+    const chip = document.createElement("button");
+    chip.className = "chip";
+    chip.dataset.cat = cat;
+    chip.innerHTML = `<span class="chip-dot" style="background:${c.color}"></span> ${cat}`;
+    chip.addEventListener("click", () => setFilter(cat));
+    bar.appendChild(chip);
+  });
+}
+
+function setFilter(cat) {
+  activeCat = cat;
+  document.querySelectorAll(".chip").forEach(c => {
+    c.classList.toggle("on", c.dataset.cat === cat);
+  });
+  render();
+}
+
+// ─── SEARCH ───────────────────────────────────────────────────
+const searchEl = document.getElementById("search");
+const clearBtn = document.getElementById("clearBtn");
+
+searchEl.addEventListener("input", () => {
+  searchQ = searchEl.value.trim().toLowerCase();
+  clearBtn.classList.toggle("show", searchQ.length > 0);
+  render();
+});
+
+clearBtn.addEventListener("click", () => {
+  searchEl.value = "";
+  searchQ = "";
+  clearBtn.classList.remove("show");
+  render();
+});
+
+// ─── TOGGLE CARD ─────────────────────────────────────────────
+function toggleCard(el) {
+  const wasOpen = el.classList.contains("open");
+  document.querySelectorAll(".card.open").forEach(c => c.classList.remove("open"));
+  if (!wasOpen) el.classList.add("open");
+}
+
+// ─── RENDER ───────────────────────────────────────────────────
+function render() {
+  const main = document.getElementById("main");
+  const hub = document.getElementById("hub");
+  const empty = document.getElementById("empty");
+  const countEl = document.getElementById("countVisible");
+
+  // Remove old sections (but not empty state or hub)
+  main.querySelectorAll(".cat-section").forEach(s => s.remove());
+
+  // Mostrar HUB si es "all" sin búsqueda
+  if (activeCat === "all" && !searchQ) {
+    hub.classList.add("show");
+    empty.classList.remove("show");
+    countEl.textContent = ALL_DEVICES.length;
+    return;
+  } else {
+    hub.classList.remove("show");
+  }
+
+  let totalVisible = 0;
+  const categories = activeCat === "all" ? Object.keys(DATA) : [activeCat];
+
+  categories.forEach(cat => {
+    const devices = DATA[cat].filter(d => {
+      if (!searchQ) return true;
+      return (
+        d.nombre.toLowerCase().includes(searchQ) ||
+        d.corta.toLowerCase().includes(searchQ) ||
+        cat.toLowerCase().includes(searchQ)
+      );
+    });
+
+    if (devices.length === 0) return;
+
+    totalVisible += devices.length;
+    const c = getCat(cat);
+    const iconKey = "cat_" + cat.replace(/[^a-zA-Z]/g, "");
+    const catIcon = getIcon(iconKey) || ICONS.default_icon;
+
+    const section = document.createElement("div");
+    section.className = "cat-section";
+    section.innerHTML = `
+      <div class="cat-header">
+        <div class="cat-icon-wrap" style="background:${c.bg}; color:${c.color}">${catIcon}</div>
+        <span class="cat-name" style="color:${c.color}">${cat}</span>
+        <span class="cat-count">${devices.length} dispositivo${devices.length !== 1 ? "s" : ""}</span>
+      </div>
+      <div class="cat-divider"></div>
+      <div class="device-grid"></div>
+    `;
+
+    const grid = section.querySelector(".device-grid");
+
+    devices.forEach(d => {
+      const devIcon = getIcon(d.icono);
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="card-strip" style="background:${c.strip}"></div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-device-icon" style="background:${c.bg}; color:${c.color}">${devIcon}</div>
+            <div class="card-info">
+              <div class="card-name">${d.nombre}</div>
+              <span class="card-cat-tag" style="background:${c.bg}; color:${c.color}">${cat}</span>
+            </div>
+          </div>
+          <div class="card-desc">${d.corta}</div>
+        </div>
+        <div class="card-footer-bar">
+          <div class="card-tags">${(d.props || []).slice(0, 3).map(p => `<span class="tag">${p}</span>`).join("")}</div>
+          <button class="btn-more">Ver más ↓</button>
+        </div>
+        <div class="card-expanded">
+          <div class="exp-inner">
+            <div class="exp-label" style="color:${c.color}">Descripción</div>
+            <div class="exp-full-desc">${d.completa}</div>
+            <div class="exp-example">
+              <div class="exp-label">Ejemplo de Uso</div>
+              <div class="exp-example-text">${d.ejemplo}</div>
+            </div>
+            ${d.props && d.props.length > 0 ? `
+              <div class="exp-label" style="color:${c.color}; margin-bottom: 7px">Propiedades clave</div>
+              <div class="exp-props">${d.props.map(p => `<span class="exp-prop">${p}</span>`).join("")}</div>
+            ` : ""}
+            ${d.docs ? `<a class="btn-docs" href="${d.docs}" target="_blank" rel="noopener">📄 Docs oficiales Epic ↗</a>` : ""}
+          </div>
+        </div>
+      `;
+
+      card.querySelector(".btn-more").addEventListener("click", e => {
+        e.stopPropagation();
+        toggleCard(card);
+        const btn = card.querySelector(".btn-more");
+        btn.textContent = card.classList.contains("open") ? "Cerrar ↑" : "Ver más ↓";
+      });
+
+      grid.appendChild(card);
+    });
+
+    main.insertBefore(section, empty);
+  });
+
+  countEl.textContent = totalVisible;
+  empty.classList.toggle("show", totalVisible === 0);
+}
+
+// ─── INIT ─────────────────────────────────────────────────────
+buildFilterBar();
+render();
+
+// ─── MODAL UEFN TOOL ──────────────────────────────────────────────
+const uefnModal = document.getElementById("uefnModal");
+const uefnToolBtn = document.getElementById("uefnToolBtn");
+const closeModal = document.getElementById("closeModal");
+
+uefnToolBtn.addEventListener("click", () => {
+  uefnModal.classList.add("show");
+});
+
+closeModal.addEventListener("click", () => {
+  uefnModal.classList.remove("show");
+});
+
+uefnModal.addEventListener("click", (e) => {
+  if (e.target === uefnModal) {
+    uefnModal.classList.remove("show");
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && uefnModal.classList.contains("show")) {
+    uefnModal.classList.remove("show");
+  }
+});
+
+// ─── PWA: Service Worker ──────────────────────────────────────
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js").catch(() => {});
+}
+</script>
+</body>
+</html>
